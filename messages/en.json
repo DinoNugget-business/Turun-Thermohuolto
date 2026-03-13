@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "title": "Turun Thermohuolto Oy — Refrigeration, heaters & air conditioning",
+    "description": "Installation, repair and maintenance of vehicle refrigeration units, auxiliary heaters and air conditioning systems. 24/7 on-call service. Lieto, Finland."
+  },
+  "hero": {
+    "tagline": "Specialists in vehicle refrigeration units, auxiliary heaters and air conditioning systems in Lieto — over 20 years of experience.",
+    "emergency": "24/7 On-call:",
+    "callUs": "Call us",
+    "seeServices": "View services"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Professional installation, repair and maintenance for all brand refrigeration units, heaters and air conditioning systems."
+  },
+  "brands": {
+    "title": "Brands We Represent",
+    "subtitle": "We sell, install and service equipment from leading manufacturers."
+  },
+  "about": {
+    "title": "Our Story",
+    "description": "Turun Thermohuolto Oy specializes in the installation, repair and maintenance of vehicle refrigeration units. We operate as an authorized refrigeration equipment retailer and provide government-mandated testing and calibration services.",
+    "milestone1": "Company founded in Turku, Oriketo district",
+    "milestone2": "Relocated to current facilities in Lieto, Tuulissuo area",
+    "milestone3": "20th anniversary — over two decades of expertise"
+  },
+  "team": {
+    "title": "Our Team",
+    "subtitle": "Our skilled professionals are here to help you."
+  },
+  "quality": {
+    "title": "Quality & Reliability",
+    "subtitle": "High quality is the foundation of our operations.",
+    "standardsTitle": "International Standards",
+    "standardsDesc": "Our management systems meet international testing and calibration laboratory requirements.",
+    "service247Title": "24/7 On-Call Service",
+    "service247Desc": "Round-the-clock on-call service ensures you get help even in urgent situations.",
+    "trainingTitle": "Continuous Development",
+    "trainingDesc": "We continuously invest in staff training and maintaining professional expertise.",
+    "reportingTitle": "Comprehensive Reporting",
+    "reportingDesc": "We deliver error-free, timely products and services backed by a comprehensive reporting system."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We are happy to tell you more about our services.",
+    "phone": "Phone",
+    "emergencyLabel": "On-call 24/7",
+    "email": "Email",
+    "address": "Address",
+    "formTitle": "Send a message",
+    "formName": "Your name",
+    "formEmail": "Your email address",
+    "formMessage": "Your message...",
+    "formSubmit": "Send message"
+  },
+  "footer": {
+    "description": "Specialists in vehicle refrigeration units, auxiliary heaters and air conditioning systems in Lieto, Finland.",
+    "quickLinks": "Quick Links",
+    "link_services": "Services",
+    "link_brands": "Brands",
+    "link_about": "About Us",
+    "link_team": "Team",
+    "link_contact": "Contact",
+    "contactTitle": "Contact",
+    "emergency": "On-call 24/7:",
+    "rights": "All rights reserved."
+  }
+}

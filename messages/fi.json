@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "title": "Turun Thermohuolto Oy — Kylmälaitteet, lämmittimet & ilmastointi",
+    "description": "Ajoneuvojen kylmäkoneiden, lisälämmittimien ja ilmastointilaitteiden asennus, korjaus ja huolto. 24/7 päivystys. Lieto."
+  },
+  "hero": {
+    "tagline": "Ajoneuvojen kylmäkoneiden, lisälämmittimien ja ilmastointilaitteiden ammattilainen Lietossa — yli 20 vuoden kokemuksella.",
+    "emergency": "24/7 Päivystys:",
+    "callUs": "Soita meille",
+    "seeServices": "Katso palvelut"
+  },
+  "services": {
+    "title": "Palvelumme",
+    "subtitle": "Ammattitaitoista asennusta, korjausta ja huoltoa kaikille merkki- ja ajoneuvokylmälaitteille, lämmittimille sekä ilmastointilaitteille."
+  },
+  "brands": {
+    "title": "Edustamamme merkit",
+    "subtitle": "Myymme, asennamme ja huollamme johtavien valmistajien laitteita."
+  },
+  "about": {
+    "title": "Yrityksen tarina",
+    "description": "Turun Thermohuolto Oy on erikoistunut ajoneuvoissa käytettävien kylmäkoneiden asennukseen, korjaukseen ja huoltoon. Toimimme valtuutettuna kylmälaitemyyjänä ja tarjoamme viranomaismääräysten edellyttämiä testaus- ja kalibrointipalveluja.",
+    "milestone1": "Yritys perustettu Turussa, Oriketon kaupunginosassa",
+    "milestone2": "Muutto nykyisiin tiloihin Lietoon, Tuulissuon alueelle",
+    "milestone3": "20-vuotisjuhlavuosi — yli kaksi vuosikymmentä ammattitaitoa"
+  },
+  "team": {
+    "title": "Tiimimme",
+    "subtitle": "Ammattitaitoinen henkilökuntamme palvelee sinua."
+  },
+  "quality": {
+    "title": "Laatu & luotettavuus",
+    "subtitle": "Korkea laatu on toimintamme perusta.",
+    "standardsTitle": "Kansainväliset standardit",
+    "standardsDesc": "Toimintajärjestelmämme täyttää kansainväliset testaus- ja kalibrointilaboratorioiden vaatimukset.",
+    "service247Title": "24/7 Päivystyspalvelu",
+    "service247Desc": "Ympärivuorokautinen päivystys varmistaa, että saat apua myös kiireellisissä tilanteissa.",
+    "trainingTitle": "Jatkuva kehittäminen",
+    "trainingDesc": "Panostamme henkilöstön koulutukseen ja ammattitaidon ylläpitämiseen jatkuvasti.",
+    "reportingTitle": "Kattava raportointi",
+    "reportingDesc": "Tuotamme virheettömiä, oikea-aikaisia tuotteita ja palveluja kattavalla raportointijärjestelmällä."
+  },
+  "contact": {
+    "title": "Ota yhteyttä",
+    "subtitle": "Kerromme mielellämme lisää palveluistamme.",
+    "phone": "Puhelin",
+    "emergencyLabel": "Päivystys 24/7",
+    "email": "Sähköposti",
+    "address": "Osoite",
+    "formTitle": "Lähetä viesti",
+    "formName": "Nimesi",
+    "formEmail": "Sähköpostiosoitteesi",
+    "formMessage": "Viestisi...",
+    "formSubmit": "Lähetä viesti"
+  },
+  "footer": {
+    "description": "Ajoneuvojen kylmäkoneiden, lisälämmittimien ja ilmastointilaitteiden ammattilainen Lietossa.",
+    "quickLinks": "Pikalinkit",
+    "link_services": "Palvelut",
+    "link_brands": "Merkit",
+    "link_about": "Meistä",
+    "link_team": "Tiimi",
+    "link_contact": "Yhteystiedot",
+    "contactTitle": "Yhteystiedot",
+    "emergency": "Päivystys 24/7:",
+    "rights": "Kaikki oikeudet pidätetään."
+  }
+}
