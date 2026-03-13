@@ -28,7 +28,7 @@ export default function ChatQuickReplies({ faqIds, onSelect }: Props) {
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = "rgba(0,163,191,0.15)";
-              e.currentTarget.style.borderColor = "#00A3BF";
+              e.currentTarget.style.borderColor = "#0ACDDF";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.backgroundColor = "transparent";
@@ -59,7 +59,7 @@ export default function ChatQuickReplies({ faqIds, onSelect }: Props) {
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = "rgba(0,163,191,0.15)";
-              e.currentTarget.style.borderColor = "#00A3BF";
+              e.currentTarget.style.borderColor = "#0ACDDF";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.backgroundColor = "transparent";

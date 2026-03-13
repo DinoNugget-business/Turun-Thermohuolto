@@ -3,11 +3,33 @@
     "title": "Turun Thermohuolto Oy — Refrigeration, heaters & air conditioning",
     "description": "Installation, repair and maintenance of vehicle refrigeration units, auxiliary heaters and air conditioning systems. 24/7 on-call service. Lieto, Finland."
   },
+  "nav": {
+    "services": "Services",
+    "palvelut": "All Services",
+    "brands": "Brands",
+    "about": "About",
+    "referenssit": "References",
+    "team": "Team",
+    "contact": "Contact",
+    "emergency": "On-call 24/7:",
+    "backHome": "Back to home"
+  },
   "hero": {
+    "category": "Refrigeration · Heaters · Air Conditioning",
     "tagline": "Specialists in vehicle refrigeration units, auxiliary heaters and air conditioning systems in Lieto — over 20 years of experience.",
     "emergency": "24/7 On-call:",
     "callUs": "Call us",
-    "seeServices": "View services"
+    "seeServices": "View services",
+    "statYears": "Years of experience",
+    "statBrands": "Brands represented",
+    "statEmergency": "Around-the-clock service"
+  },
+  "trust": {
+    "founded": "Founded",
+    "brands": "Brands represented",
+    "emergency": "On-call service",
+    "atpValue": "ATP",
+    "atpLabel": "Authorized inspection station"
   },
   "services": {
     "title": "Our Services",
@@ -15,7 +37,10 @@
   },
   "brands": {
     "title": "Brands We Represent",
-    "subtitle": "We sell, install and service equipment from leading manufacturers."
+    "subtitle": "We sell, install and service equipment from leading manufacturers.",
+    "catRefrigeration": "Refrigeration",
+    "catHeating": "Heating",
+    "catAc": "Air Conditioning"
   },
   "about": {
     "title": "Our Story",
@@ -23,6 +48,18 @@
     "milestone1": "Company founded in Turku, Oriketo district",
     "milestone2": "Relocated to current facilities in Lieto, Tuulissuo area",
     "milestone3": "20th anniversary — over two decades of expertise"
+  },
+  "process": {
+    "title": "How We Work",
+    "subtitle": "Professional service process from start to finish.",
+    "step1Title": "Contact Us",
+    "step1Desc": "Reach out by phone or form. We'll assess your needs.",
+    "step2Title": "Assessment",
+    "step2Desc": "We evaluate the equipment condition and required actions.",
+    "step3Title": "Service",
+    "step3Desc": "Professional installation, repair or maintenance on schedule.",
+    "step4Title": "Ongoing Support",
+    "step4Desc": "We provide continuous support and round-the-clock on-call service."
   },
   "team": {
     "title": "Our Team",
@@ -50,8 +87,10 @@
     "formTitle": "Send a message",
     "formName": "Your name",
     "formEmail": "Your email address",
+    "formPhone": "Your phone number",
     "formMessage": "Your message...",
-    "formSubmit": "Send message"
+    "formSubmit": "Send message",
+    "formSuccess": "Thank you for your message! We'll get back to you as soon as possible."
   },
   "footer": {
     "description": "Specialists in vehicle refrigeration units, auxiliary heaters and air conditioning systems in Lieto, Finland.",
@@ -61,8 +100,31 @@
     "link_about": "About Us",
     "link_team": "Team",
     "link_contact": "Contact",
+    "link_palvelut": "All Services",
+    "link_referenssit": "References",
     "contactTitle": "Contact",
     "emergency": "On-call 24/7:",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "est": "Est. 2004, Turku"
+  },
+  "servicesPage": {
+    "title": "Our Services",
+    "subtitle": "We offer professional installation, repair and maintenance for all brand refrigeration units, heaters and air conditioning systems.",
+    "ctaTitle": "Need service or installation?"
+  },
+  "referencesPage": {
+    "title": "References",
+    "subtitle": "We have completed hundreds of refrigeration, heating and air conditioning installations across various vehicle types.",
+    "boatsTitle": "Boats & Motorhomes",
+    "boatsDesc": "Heater installation, repair and maintenance for boats and motorhomes. Webasto and Eberspächer heaters.",
+    "refrigerationTitle": "Refrigerated Transport",
+    "refrigerationDesc": "Refrigeration unit installation, repair and maintenance for frozen transport. Thermo King, Carrier, Lumikko.",
+    "bioTitle": "Bio-Refrigeration",
+    "bioDesc": "Lumikko bio-refrigeration unit sales and service. Energy-efficient solutions for food transport.",
+    "tractorsTitle": "Tractors & Equipment",
+    "tractorsDesc": "Refrigeration and heating equipment installation and service for agricultural and industrial machinery.",
+    "vehiclesTitle": "Passenger & Commercial Vehicles",
+    "vehiclesDesc": "Air conditioning service and repair for passenger and commercial vehicles. R-1234YF refrigerant.",
+    "ctaTitle": "Ask about our references"
   }
 }

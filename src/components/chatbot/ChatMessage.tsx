@@ -8,7 +8,7 @@ function formatText(text: string) {
   return parts.map((part, i) => {
     if (part.startsWith("**") && part.endsWith("**")) {
       return (
-        <strong key={i} style={{ color: "#00A3BF" }}>
+        <strong key={i} style={{ color: "#0ACDDF" }}>
           {part.slice(2, -2)}
         </strong>
       );
@@ -30,7 +30,7 @@ export default function ChatMessage({ message }: { message: ChatMessageData }) {
         }}
       >
         {isBot ? (
-          <Bot className="w-3.5 h-3.5" style={{ color: "#00A3BF" }} />
+          <Bot className="w-3.5 h-3.5" style={{ color: "#0ACDDF" }} />
         ) : (
           <User className="w-3.5 h-3.5" style={{ color: "#8A9BB0" }} />
         )}
@@ -41,7 +41,7 @@ export default function ChatMessage({ message }: { message: ChatMessageData }) {
         style={
           isBot
             ? { backgroundColor: "#1E2938", color: "#E0E4E8", border: "1px solid #2A3A50" }
-            : { backgroundColor: "#00A3BF", color: "#FFFFFF" }
+            : { backgroundColor: "#0ACDDF", color: "#FFFFFF" }
         }
       >
         {formatText(message.text)}

@@ -4,23 +4,25 @@ import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { Inter, Rajdhani } from "next/font/google";
+import { Barlow_Condensed, Source_Sans_3 } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import ChatbotProvider from "@/components/chatbot/ChatbotProvider";
 import ChatbotTrigger from "@/components/chatbot/ChatbotTrigger";
 import ChatbotWindow from "@/components/chatbot/ChatbotWindow";
+import HeaderNav from "@/components/sections/HeaderNav";
 import "../globals.css";
 
-const inter = Inter({
+const barlowCondensed = Barlow_Condensed({
+  weight: ["400", "600", "700", "800"],
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-barlow",
   display: "swap",
 });
 
-const rajdhani = Rajdhani({
-  weight: ["400", "500", "600", "700"],
+const sourceSans = Source_Sans_3({
+  weight: ["400", "600"],
   subsets: ["latin"],
-  variable: "--font-rajdhani",
+  variable: "--font-source",
   display: "swap",
 });
 
@@ -51,11 +53,13 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${inter.variable} ${rajdhani.variable}`}>
-      <body className="bg-white font-body antialiased" style={{ color: "#0F1B2D" }}>
+    <html lang={locale} className={`${barlowCondensed.variable} ${sourceSans.variable}`}>
+      <body className="antialiased">
+        <div className="noise-overlay" aria-hidden="true" />
         <NextIntlClientProvider messages={messages}>
           <ChatbotProvider>
-            <main className="min-h-screen">{children}</main>
+            <HeaderNav />
+            <main>{children}</main>
             <ChatbotWindow />
             <ChatbotTrigger />
           </ChatbotProvider>

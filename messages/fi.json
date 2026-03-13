@@ -3,11 +3,33 @@
     "title": "Turun Thermohuolto Oy — Kylmälaitteet, lämmittimet & ilmastointi",
     "description": "Ajoneuvojen kylmäkoneiden, lisälämmittimien ja ilmastointilaitteiden asennus, korjaus ja huolto. 24/7 päivystys. Lieto."
   },
+  "nav": {
+    "services": "Palvelut",
+    "palvelut": "Kaikki palvelut",
+    "brands": "Merkit",
+    "about": "Meistä",
+    "referenssit": "Referenssit",
+    "team": "Tiimi",
+    "contact": "Yhteystiedot",
+    "emergency": "Päivystys 24/7:",
+    "backHome": "Takaisin etusivulle"
+  },
   "hero": {
+    "category": "Kylmäkoneet · Lämmittimet · Ilmastointi",
     "tagline": "Ajoneuvojen kylmäkoneiden, lisälämmittimien ja ilmastointilaitteiden ammattilainen Lietossa — yli 20 vuoden kokemuksella.",
     "emergency": "24/7 Päivystys:",
     "callUs": "Soita meille",
-    "seeServices": "Katso palvelut"
+    "seeServices": "Katso palvelut",
+    "statYears": "Vuotta kokemusta",
+    "statBrands": "Edustettua merkkiä",
+    "statEmergency": "Ympärivuorokautinen päivystys"
+  },
+  "trust": {
+    "founded": "Perustettu",
+    "brands": "Edustettua merkkiä",
+    "emergency": "Päivystys",
+    "atpValue": "ATP",
+    "atpLabel": "Valtuutettu tarkastusasema"
   },
   "services": {
     "title": "Palvelumme",
@@ -15,7 +37,10 @@
   },
   "brands": {
     "title": "Edustamamme merkit",
-    "subtitle": "Myymme, asennamme ja huollamme johtavien valmistajien laitteita."
+    "subtitle": "Myymme, asennamme ja huollamme johtavien valmistajien laitteita.",
+    "catRefrigeration": "Kylmälaitteet",
+    "catHeating": "Lämmittimet",
+    "catAc": "Ilmastointi"
   },
   "about": {
     "title": "Yrityksen tarina",
@@ -23,6 +48,18 @@
     "milestone1": "Yritys perustettu Turussa, Oriketon kaupunginosassa",
     "milestone2": "Muutto nykyisiin tiloihin Lietoon, Tuulissuon alueelle",
     "milestone3": "20-vuotisjuhlavuosi — yli kaksi vuosikymmentä ammattitaitoa"
+  },
+  "process": {
+    "title": "Näin toimimme",
+    "subtitle": "Ammattitaitoinen palveluprosessi alusta loppuun.",
+    "step1Title": "Yhteydenotto",
+    "step1Desc": "Ota yhteyttä puhelimitse tai lomakkeella. Kartoitamme tarpeesi.",
+    "step2Title": "Kartoitus",
+    "step2Desc": "Selvitämme laitteiston tilan ja tarvittavat toimenpiteet.",
+    "step3Title": "Huolto",
+    "step3Desc": "Ammattitaitoinen asennus, korjaus tai huolto sovitussa aikataulussa.",
+    "step4Title": "Jatkuva tuki",
+    "step4Desc": "Tarjoamme jatkuvan tuen ja ympärivuorokautisen päivystyksen."
   },
   "team": {
     "title": "Tiimimme",
@@ -50,8 +87,10 @@
     "formTitle": "Lähetä viesti",
     "formName": "Nimesi",
     "formEmail": "Sähköpostiosoitteesi",
+    "formPhone": "Puhelinnumerosi",
     "formMessage": "Viestisi...",
-    "formSubmit": "Lähetä viesti"
+    "formSubmit": "Lähetä viesti",
+    "formSuccess": "Kiitos viestistäsi! Otamme yhteyttä mahdollisimman pian."
   },
   "footer": {
     "description": "Ajoneuvojen kylmäkoneiden, lisälämmittimien ja ilmastointilaitteiden ammattilainen Lietossa.",
@@ -61,8 +100,31 @@
     "link_about": "Meistä",
     "link_team": "Tiimi",
     "link_contact": "Yhteystiedot",
+    "link_palvelut": "Kaikki palvelut",
+    "link_referenssit": "Referenssit",
     "contactTitle": "Yhteystiedot",
     "emergency": "Päivystys 24/7:",
-    "rights": "Kaikki oikeudet pidätetään."
+    "rights": "Kaikki oikeudet pidätetään.",
+    "est": "Est. 2004, Turku"
+  },
+  "servicesPage": {
+    "title": "Palvelumme",
+    "subtitle": "Tarjoamme ammattitaitoista asennusta, korjausta ja huoltoa kaikille merkki- ja ajoneuvokylmälaitteille, lämmittimille sekä ilmastointilaitteille.",
+    "ctaTitle": "Tarvitsetko huoltoa tai asennusta?"
+  },
+  "referencesPage": {
+    "title": "Referenssit",
+    "subtitle": "Olemme toteuttaneet satoja kylmälaite-, lämmitin- ja ilmastointiasennuksia eri ajoneuvotyyppeihin.",
+    "boatsTitle": "Veneet & matkailuautot",
+    "boatsDesc": "Lämmittimien asennus, korjaus ja huolto veneisiin ja matkailuautoihin. Webasto- ja Eberspächer-lämmittimet.",
+    "refrigerationTitle": "Kylmäkuljetukset",
+    "refrigerationDesc": "Kylmäkoneiden asennus, korjaus ja huolto pakastekuljetuksiin. Thermo King, Carrier, Lumikko.",
+    "bioTitle": "Biokylmälaitteet",
+    "bioDesc": "Lumikko-biokylmäkoneiden myynti ja huolto. Energiatehokkaat ratkaisut elintarvikekuljetuksiin.",
+    "tractorsTitle": "Traktorit & työkoneet",
+    "tractorsDesc": "Maatalous- ja työkoneiden kylmä- ja lämpölaitteiden asennus ja huolto.",
+    "vehiclesTitle": "Henkilö- ja hyötyajoneuvot",
+    "vehiclesDesc": "Ilmastoinnin huolto ja korjaus henkilö- ja hyötyajoneuvoihin. R-1234YF kylmäaine.",
+    "ctaTitle": "Kysy lisää referensseistämme"
   }
 }

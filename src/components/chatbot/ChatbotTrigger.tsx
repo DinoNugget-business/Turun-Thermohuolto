@@ -12,13 +12,13 @@ export default function ChatbotTrigger() {
       aria-label={isOpen ? "Sulje chat" : "Avaa chat"}
       className="fixed bottom-6 right-4 sm:right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 group hover:-translate-y-0.5"
       style={{
-        backgroundColor: "rgba(15,27,45,0.95)",
+        backgroundColor: "rgba(12,24,36,0.95)",
         backdropFilter: "blur(12px)",
         border: "2px solid rgba(0,163,191,0.6)",
         boxShadow: "0 4px 20px rgba(0,163,191,0.2)",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = "#00A3BF";
+        e.currentTarget.style.borderColor = "#0ACDDF";
         e.currentTarget.style.boxShadow = "0 8px 30px rgba(0,163,191,0.3)";
       }}
       onMouseLeave={(e) => {
@@ -27,11 +27,11 @@ export default function ChatbotTrigger() {
       }}
     >
       {isOpen ? (
-        <X className="w-6 h-6 transition-transform duration-200" style={{ color: "#00A3BF" }} />
+        <X className="w-6 h-6 transition-transform duration-200" style={{ color: "#0ACDDF" }} />
       ) : (
         <MessageCircle
           className="w-6 h-6 transition-transform duration-200 group-hover:scale-110"
-          style={{ color: "#00A3BF" }}
+          style={{ color: "#0ACDDF" }}
         />
       )}
     </button>

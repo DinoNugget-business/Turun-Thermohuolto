@@ -87,7 +87,7 @@ export default function ChatbotWindow() {
       role="dialog"
       aria-label="Thermohuolto Chat"
       className="fixed bottom-24 right-4 sm:right-6 z-50 w-[calc(100vw-32px)] sm:w-[400px] h-[70vh] sm:h-[540px] max-h-[calc(100vh-120px)] flex flex-col rounded-2xl overflow-hidden shadow-2xl shadow-black/50"
-      style={{ animation: "scaleIn 0.25s ease-out", backgroundColor: "#0F1B2D", border: "1px solid #243550" }}
+      style={{ animation: "scaleIn 0.25s ease-out", backgroundColor: "#0C1824", border: "1px solid #243550" }}
     >
       <div
         className="flex items-center justify-between px-4 py-3"
@@ -97,10 +97,10 @@ export default function ChatbotWindow() {
         }}
       >
         <div className="flex items-center gap-2">
-          <Bot className="w-5 h-5" style={{ color: "#00A3BF" }} />
+          <Bot className="w-5 h-5" style={{ color: "#0ACDDF" }} />
           <span
             className="font-semibold text-sm"
-            style={{ color: "#00A3BF", fontFamily: "var(--font-display, sans-serif)" }}
+            style={{ color: "#0ACDDF", fontFamily: "var(--font-display, sans-serif)" }}
           >
             Thermohuolto Apu
           </span>

@@ -18,7 +18,7 @@ export default function ChatInput({ onSend }: Props) {
   return (
     <div
       className="flex items-center gap-2 px-3 py-2.5"
-      style={{ borderTop: "1px solid #243550", backgroundColor: "#0F1B2D" }}
+      style={{ borderTop: "1px solid #243550", backgroundColor: "#0C1824" }}
     >
       <input
         type="text"
@@ -45,12 +45,12 @@ export default function ChatInput({ onSend }: Props) {
         onClick={handleSend}
         aria-label="Lähetä viesti"
         className="w-9 h-9 rounded-xl flex items-center justify-center transition-all"
-        style={{ backgroundColor: value.trim() ? "#00A3BF" : "#243550", color: "#FFFFFF" }}
+        style={{ backgroundColor: value.trim() ? "#0ACDDF" : "#243550", color: "#FFFFFF" }}
         onMouseEnter={(e) => {
           if (value.trim()) e.currentTarget.style.backgroundColor = "#007A8F";
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.backgroundColor = value.trim() ? "#00A3BF" : "#243550";
+          e.currentTarget.style.backgroundColor = value.trim() ? "#0ACDDF" : "#243550";
         }}
       >
         <Send className="w-4 h-4" />

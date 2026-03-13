@@ -1,148 +1,208 @@
 "use client";
 
+import { useState, FormEvent } from "react";
 import { useTranslations } from "next-intl";
-import { Phone, Mail, MapPin, AlertCircle, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
 import { CONTACT, GOOGLE_MAPS_EMBED } from "@/lib/constants";
+import Image from "next/image";
 
 export default function ContactSection() {
   const t = useTranslations("contact");
+  const [submitted, setSubmitted] = useState(false);
+
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    setSubmitted(true);
+  }
 
   return (
-    <section id="contact" className="py-20 px-6" style={{ backgroundColor: "#FFFFFF" }}>
+    <section id="contact" className="py-20 sm:py-24 px-5" style={{ backgroundColor: "#FAFAF8" }}>
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-14 animate-on-scroll">
+        {/* Emergency banner */}
+        <a
+          href={CONTACT.emergencyHref}
+          className="flex items-center gap-3 rounded-xl overflow-hidden mb-12 transition-all hover:opacity-90 animate-on-scroll"
+          style={{ backgroundColor: "rgba(232,92,42,0.06)", border: "1px solid rgba(232,92,42,0.15)" }}
+        >
+          <div className="w-1.5 self-stretch" style={{ backgroundColor: "#E85C2A" }} />
+          <div className="flex items-center gap-3 py-4 pr-5">
+            <Phone className="w-5 h-5" style={{ color: "#E85C2A" }} />
+            <div>
+              <p className="text-xs font-semibold" style={{ color: "#E85C2A" }}>
+                {t("emergencyLabel")}
+              </p>
+              <p className="text-lg font-bold" style={{ color: "#1B3A5C" }}>
+                {CONTACT.emergency}
+              </p>
+            </div>
+          </div>
+        </a>
+
+        {/* Heading */}
+        <div className="accent-bar mb-12 animate-on-scroll">
           <h2
-            className="text-3xl sm:text-4xl font-bold mb-3"
-            style={{ fontFamily: "var(--font-display)", color: "#0F1B2D" }}
+            className="text-3xl sm:text-4xl font-extrabold mb-2"
+            style={{ fontFamily: "var(--font-display)", color: "#1B3A5C" }}
           >
             {t("title")}
           </h2>
-          <p className="text-base" style={{ color: "#5A6B7F" }}>
+          <p className="text-base" style={{ color: "#6B7280" }}>
             {t("subtitle")}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Contact info cards */}
-          <div className="space-y-4 animate-on-scroll">
-            <a
-              href={CONTACT.phoneHref}
-              className="glass-card rounded-xl p-5 flex items-center gap-4 group"
-            >
-              <div
-                className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 icon-hover-lift"
-                style={{ backgroundColor: "rgba(0,163,191,0.1)", border: "1px solid rgba(0,163,191,0.15)" }}
-              >
-                <Phone className="w-5 h-5" style={{ color: "#00A3BF" }} />
-              </div>
-              <div>
-                <p className="text-xs font-medium" style={{ color: "#5A6B7F" }}>{t("phone")}</p>
-                <p className="font-semibold" style={{ color: "#0F1B2D" }}>{CONTACT.phone}</p>
-              </div>
-            </a>
-
-            <a
-              href={CONTACT.emergencyHref}
-              className="rounded-xl p-5 flex items-center gap-4 group transition-all"
-              style={{
-                backgroundColor: "rgba(232,92,42,0.06)",
-                border: "1px solid rgba(232,92,42,0.2)",
-              }}
-            >
-              <div
-                className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
-                style={{ backgroundColor: "rgba(232,92,42,0.12)", border: "1px solid rgba(232,92,42,0.25)" }}
-              >
-                <AlertCircle className="w-5 h-5" style={{ color: "#E85C2A" }} />
-              </div>
-              <div>
-                <p className="text-xs font-medium" style={{ color: "#E85C2A" }}>{t("emergencyLabel")}</p>
-                <p className="font-semibold" style={{ color: "#0F1B2D" }}>{CONTACT.emergency}</p>
-              </div>
-            </a>
-
-            <a
-              href={`mailto:${CONTACT.email}`}
-              className="glass-card rounded-xl p-5 flex items-center gap-4 group"
-            >
-              <div
-                className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 icon-hover-lift"
-                style={{ backgroundColor: "rgba(0,163,191,0.1)", border: "1px solid rgba(0,163,191,0.15)" }}
-              >
-                <Mail className="w-5 h-5" style={{ color: "#00A3BF" }} />
-              </div>
-              <div>
-                <p className="text-xs font-medium" style={{ color: "#5A6B7F" }}>{t("email")}</p>
-                <p className="font-semibold text-sm" style={{ color: "#0F1B2D" }}>{CONTACT.email}</p>
-              </div>
-            </a>
-
-            <div className="glass-card rounded-xl p-5 flex items-center gap-4">
-              <div
-                className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
-                style={{ backgroundColor: "rgba(0,163,191,0.1)", border: "1px solid rgba(0,163,191,0.15)" }}
-              >
-                <MapPin className="w-5 h-5" style={{ color: "#00A3BF" }} />
-              </div>
-              <div>
-                <p className="text-xs font-medium" style={{ color: "#5A6B7F" }}>{t("address")}</p>
-                <p className="font-semibold text-sm" style={{ color: "#0F1B2D" }}>{CONTACT.fullAddress}</p>
-              </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          {/* Left — contact info + form */}
+          <div>
+            {/* Contact info list */}
+            <div className="space-y-3 mb-8 animate-on-scroll">
+              <ContactRow
+                icon={<Phone className="w-4 h-4" style={{ color: "#0ACDDF" }} />}
+                label={t("phone")}
+                value={CONTACT.phone}
+                href={CONTACT.phoneHref}
+              />
+              <ContactRow
+                icon={<Mail className="w-4 h-4" style={{ color: "#0ACDDF" }} />}
+                label={t("email")}
+                value={CONTACT.email}
+                href={`mailto:${CONTACT.email}`}
+              />
+              <ContactRow
+                icon={<MapPin className="w-4 h-4" style={{ color: "#0ACDDF" }} />}
+                label={t("address")}
+                value={CONTACT.fullAddress}
+              />
             </div>
 
-            {/* Visual-only contact form */}
-            <div className="glass-card rounded-xl p-5 mt-4">
-              <h3 className="font-semibold text-sm mb-3" style={{ color: "#0F1B2D" }}>{t("formTitle")}</h3>
-              <div className="space-y-2.5">
-                <input
-                  type="text"
-                  placeholder={t("formName")}
-                  className="w-full px-3 py-2 rounded-lg text-sm outline-none"
-                  style={{ border: "1px solid #D8DEE6", color: "#0F1B2D" }}
-                  readOnly
-                />
-                <input
-                  type="email"
-                  placeholder={t("formEmail")}
-                  className="w-full px-3 py-2 rounded-lg text-sm outline-none"
-                  style={{ border: "1px solid #D8DEE6", color: "#0F1B2D" }}
-                  readOnly
-                />
-                <textarea
-                  placeholder={t("formMessage")}
-                  rows={3}
-                  className="w-full px-3 py-2 rounded-lg text-sm outline-none resize-none"
-                  style={{ border: "1px solid #D8DEE6", color: "#0F1B2D" }}
-                  readOnly
-                />
-                <button
-                  className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold text-white transition-all btn-shimmer"
-                  style={{ backgroundColor: "#00A3BF" }}
-                >
-                  <Send className="w-4 h-4" />
-                  {t("formSubmit")}
-                </button>
-              </div>
+            {/* Interactive form */}
+            <div className="elevated-card rounded-xl p-6 animate-on-scroll">
+              <h3
+                className="text-lg font-bold mb-4"
+                style={{ fontFamily: "var(--font-display)", color: "#1B3A5C" }}
+              >
+                {t("formTitle")}
+              </h3>
+
+              {submitted ? (
+                <div className="text-center py-8">
+                  <CheckCircle className="w-10 h-10 mx-auto mb-3" style={{ color: "#0ACDDF" }} />
+                  <p className="font-semibold" style={{ color: "#1B3A5C" }}>
+                    {t("formSuccess")}
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-3">
+                  <input
+                    type="text"
+                    placeholder={t("formName")}
+                    className="form-input"
+                    required
+                  />
+                  <input
+                    type="email"
+                    placeholder={t("formEmail")}
+                    className="form-input"
+                    required
+                  />
+                  <input
+                    type="tel"
+                    placeholder={t("formPhone")}
+                    className="form-input"
+                  />
+                  <textarea
+                    placeholder={t("formMessage")}
+                    rows={4}
+                    className="form-input resize-none"
+                    required
+                  />
+                  <button
+                    type="submit"
+                    className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-lg text-sm font-semibold text-white transition-all hover:opacity-90"
+                    style={{ backgroundColor: "#0ACDDF" }}
+                  >
+                    <Send className="w-4 h-4" />
+                    {t("formSubmit")}
+                  </button>
+                </form>
+              )}
             </div>
           </div>
 
-          {/* Map */}
-          <div className="animate-on-scroll">
-            <div className="rounded-xl overflow-hidden h-full min-h-[400px]" style={{ border: "1px solid #D8DEE6" }}>
+          {/* Right — map + facility image */}
+          <div className="animate-on-scroll space-y-4">
+            <div className="relative rounded-xl overflow-hidden min-h-[350px]" style={{ border: "1px solid #E8E4DF" }}>
               <iframe
                 src={GOOGLE_MAPS_EMBED}
                 width="100%"
                 height="100%"
-                style={{ border: 0, minHeight: "400px" }}
+                style={{ border: 0, minHeight: "350px" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Thermohuolto sijainti"
               />
+              {/* Floating address card */}
+              <div className="absolute bottom-4 left-4 right-4 sm:left-4 sm:right-auto sm:max-w-xs elevated-card rounded-lg p-4">
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4 shrink-0" style={{ color: "#0ACDDF" }} />
+                  <p className="text-sm font-semibold" style={{ color: "#1B3A5C" }}>
+                    {CONTACT.fullAddress}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Facility image below map */}
+            <div className="relative h-48 rounded-xl overflow-hidden">
+              <Image
+                src="/images/about/facility.jpg"
+                alt="Thermohuolto toimitilat Liedossa"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div
+                className="absolute inset-0"
+                style={{ background: "linear-gradient(to top, rgba(27,58,92,0.6) 0%, transparent 60%)" }}
+              />
+              <div className="absolute bottom-4 left-4">
+                <p className="text-sm font-bold text-white">{CONTACT.fullAddress}</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function ContactRow({
+  icon,
+  label,
+  value,
+  href,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+  href?: string;
+}) {
+  const inner = (
+    <div className="flex items-center gap-3 py-3" style={{ borderBottom: "1px solid #E8E4DF" }}>
+      {icon}
+      <div>
+        <p className="text-xs" style={{ color: "#6B7280" }}>{label}</p>
+        <p className="text-sm font-semibold" style={{ color: "#1B3A5C" }}>{value}</p>
+      </div>
+    </div>
+  );
+
+  return href ? (
+    <a href={href} className="block transition-opacity hover:opacity-70">
+      {inner}
+    </a>
+  ) : (
+    inner
   );
 }

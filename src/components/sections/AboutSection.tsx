@@ -1,52 +1,94 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Calendar, MapPin, Award } from "lucide-react";
+import Image from "next/image";
+
+const MILESTONES = [
+  { year: "2004", key: "milestone1" },
+  { year: "2010", key: "milestone2" },
+  { year: "2024", key: "milestone3" },
+] as const;
 
 export default function AboutSection() {
   const t = useTranslations("about");
 
-  const milestones = [
-    { icon: Calendar, year: "2004", key: "milestone1" },
-    { icon: MapPin, year: "2010", key: "milestone2" },
-    { icon: Award, year: "2024", key: "milestone3" },
-  ];
-
   return (
-    <section id="about" className="py-20 px-6" style={{ backgroundColor: "#FFFFFF" }}>
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-14 animate-on-scroll">
-          <h2
-            className="text-3xl sm:text-4xl font-bold mb-3"
-            style={{ fontFamily: "var(--font-display)", color: "#0F1B2D" }}
-          >
-            {t("title")}
-          </h2>
-          <p className="text-base max-w-2xl mx-auto leading-relaxed" style={{ color: "#5A6B7F" }}>
-            {t("description")}
-          </p>
-        </div>
+    <section id="about" className="py-20 sm:py-24 px-5" style={{ backgroundColor: "#FAFAF8" }}>
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* Left — heading + description + photos */}
+          <div className="animate-on-scroll">
+            <div className="accent-bar mb-8">
+              <h2
+                className="text-3xl sm:text-4xl font-extrabold mb-4"
+                style={{ fontFamily: "var(--font-display)", color: "#1B3A5C" }}
+              >
+                {t("title")}
+              </h2>
+              <p
+                className="text-base leading-relaxed"
+                style={{ color: "#6B7280", fontFamily: "var(--font-body)" }}
+              >
+                {t("description")}
+              </p>
+            </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-children">
-          {milestones.map((m) => {
-            const Icon = m.icon;
-            return (
-              <div key={m.key} className="glass-card rounded-xl p-6 text-center animate-on-scroll">
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4"
-                  style={{ backgroundColor: "rgba(0,163,191,0.1)", border: "1px solid rgba(0,163,191,0.15)" }}
-                >
-                  <Icon className="w-5 h-5" style={{ color: "#00A3BF" }} />
-                </div>
-                <p className="text-2xl font-bold mb-2" style={{ fontFamily: "var(--font-display)", color: "#00A3BF" }}>
-                  {m.year}
-                </p>
-                <p className="text-sm" style={{ color: "#5A6B7F" }}>
-                  {t(m.key)}
-                </p>
+            {/* Company photos grid */}
+            <div className="grid grid-cols-2 gap-3">
+              <div className="relative aspect-[3/2] rounded-lg overflow-hidden">
+                <Image
+                  src="/images/about/facility.jpg"
+                  alt="Thermohuolto workshop facility in Lieto"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                />
               </div>
-            );
-          })}
+              <div className="relative aspect-[3/2] rounded-lg overflow-hidden">
+                <Image
+                  src="/images/about/company.jpg"
+                  alt="Thermohuolto company and team"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Right — vertical timeline */}
+          <div className="relative pl-8">
+            {/* Timeline line */}
+            <div
+              className="absolute left-3 top-2 bottom-2 w-px"
+              style={{ backgroundColor: "rgba(10,205,223,0.2)" }}
+            />
+
+            <div className="space-y-10">
+              {MILESTONES.map((m) => (
+                <div key={m.key} className="relative animate-on-scroll">
+                  {/* Timeline dot */}
+                  <div
+                    className="absolute -left-5 top-1 w-4 h-4 rounded-full border-[3px]"
+                    style={{
+                      borderColor: "#0ACDDF",
+                      backgroundColor: "#FAFAF8",
+                    }}
+                  />
+
+                  <p
+                    className="text-2xl font-extrabold mb-1"
+                    style={{ fontFamily: "var(--font-display)", color: "#0ACDDF" }}
+                  >
+                    {m.year}
+                  </p>
+                  <p className="text-sm leading-relaxed" style={{ color: "#6B7280" }}>
+                    {t(m.key)}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
