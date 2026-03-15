@@ -12,12 +12,12 @@ function useNavItems(): NavItem[] {
   const locale = useLocale();
   const prefix = locale === "fi" ? "" : `/${locale}`;
   return [
-    { id: "services", href: "#services" },
     { id: "palvelut", href: `${prefix}/palvelut` },
-    { id: "brands", href: "#brands" },
-    { id: "about", href: "#about" },
+    { id: "tuotteet", href: `${prefix}/tuotteet` },
+    { id: "yritys", href: `${prefix}/yritys` },
     { id: "referenssit", href: `${prefix}/referenssit` },
-    { id: "contact", href: "#contact" },
+    { id: "uutisia", href: `${prefix}/uutisia` },
+    { id: "yhteydenotto", href: `${prefix}/yhteydenotto` },
   ];
 }
 
@@ -127,13 +127,18 @@ export default function HeaderNav() {
           style={{ backgroundColor: "#0C1824", borderTop: "1px solid #1E3348" }}
         >
           <nav className="px-5 py-4 flex flex-col gap-1">
-            {navItems.map((item) => (
+            {navItems.map((item, i) => (
               <a
                 key={item.id}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className="py-3 text-base font-semibold"
-                style={{ color: "rgba(245,245,245,0.8)", fontFamily: "var(--font-body)", borderBottom: "1px solid #1E3348" }}
+                className="mobile-nav-item py-3 text-base font-semibold"
+                style={{
+                  color: "rgba(245,245,245,0.8)",
+                  fontFamily: "var(--font-body)",
+                  borderBottom: "1px solid #1E3348",
+                  animationDelay: `${i * 50}ms`,
+                }}
               >
                 {t(item.id)}
               </a>

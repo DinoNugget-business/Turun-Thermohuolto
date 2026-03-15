@@ -6,9 +6,6 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Barlow_Condensed, Source_Sans_3 } from "next/font/google";
 import { routing } from "@/i18n/routing";
-import ChatbotProvider from "@/components/chatbot/ChatbotProvider";
-import ChatbotTrigger from "@/components/chatbot/ChatbotTrigger";
-import ChatbotWindow from "@/components/chatbot/ChatbotWindow";
 import HeaderNav from "@/components/sections/HeaderNav";
 import "../globals.css";
 
@@ -57,12 +54,8 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body className="antialiased">
         <div className="noise-overlay" aria-hidden="true" />
         <NextIntlClientProvider messages={messages}>
-          <ChatbotProvider>
-            <HeaderNav />
-            <main>{children}</main>
-            <ChatbotWindow />
-            <ChatbotTrigger />
-          </ChatbotProvider>
+          <HeaderNav />
+          <main>{children}</main>
         </NextIntlClientProvider>
       </body>
     </html>

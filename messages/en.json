@@ -4,15 +4,22 @@
     "description": "Installation, repair and maintenance of vehicle refrigeration units, auxiliary heaters and air conditioning systems. 24/7 on-call service. Lieto, Finland."
   },
   "nav": {
-    "services": "Services",
-    "palvelut": "All Services",
-    "brands": "Brands",
-    "about": "About",
+    "home": "Home",
+    "palvelut": "Services",
+    "tuotteet": "Products",
+    "yritys": "Company",
     "referenssit": "References",
-    "team": "Team",
-    "contact": "Contact",
+    "uutisia": "News",
+    "yhteydenotto": "Contact",
     "emergency": "On-call 24/7:",
     "backHome": "Back to home"
+  },
+  "common": {
+    "callUs": "Call us",
+    "emailField": "Email",
+    "directions": "Get directions",
+    "contactUs": "Contact us",
+    "emergencyService": "24/7 Emergency service"
   },
   "hero": {
     "category": "Refrigeration · Heaters · Air Conditioning",
@@ -90,18 +97,16 @@
     "formPhone": "Your phone number",
     "formMessage": "Your message...",
     "formSubmit": "Send message",
-    "formSuccess": "Thank you for your message! We'll get back to you as soon as possible."
+    "formSuccess": "Thank you for your message! We'll get back to you as soon as possible.",
+    "staffTitle": "Our Team",
+    "locationTitle": "Location",
+    "managingDirector": "Managing Director",
+    "atpInspector": "ATP Seasonal Inspections",
+    "mechanic": "Refrigeration Mechanic"
   },
   "footer": {
     "description": "Specialists in vehicle refrigeration units, auxiliary heaters and air conditioning systems in Lieto, Finland.",
     "quickLinks": "Quick Links",
-    "link_services": "Services",
-    "link_brands": "Brands",
-    "link_about": "About Us",
-    "link_team": "Team",
-    "link_contact": "Contact",
-    "link_palvelut": "All Services",
-    "link_referenssit": "References",
     "contactTitle": "Contact",
     "emergency": "On-call 24/7:",
     "rights": "All rights reserved.",
@@ -110,7 +115,27 @@
   "servicesPage": {
     "title": "Our Services",
     "subtitle": "We offer professional installation, repair and maintenance for all brand refrigeration units, heaters and air conditioning systems.",
-    "ctaTitle": "Need service or installation?"
+    "ctaTitle": "Need service or installation?",
+    "refrigerationTitle": "Refrigeration Units",
+    "refrigerationDesc": "Your cold chain unbroken — maintenance and repair for all branded units.",
+    "heatingTitle": "Auxiliary Heaters",
+    "heatingDesc": "Webasto and Eberspächer heater sales, installation, maintenance and repair.",
+    "acTitle": "Air Conditioning",
+    "acDesc": "AC system installation, maintenance and repair for all vehicle types.",
+    "electricalTitle": "Vehicle Electrical Work",
+    "electricalDesc": "Waste compactors, tailgates and electrical work.",
+    "atpTitle": "ATP Inspections",
+    "atpDesc": "Official seasonal inspection for food transport vehicles.",
+    "bioTitle": "Bio-Refrigeration",
+    "bioDesc": "Lumikko bio-refrigeration unit sales and service.",
+    "boatRvTitle": "Boats & Motorhomes",
+    "boatRvDesc": "Heater installation, repair and maintenance.",
+    "agricultureTitle": "Tractors & Equipment",
+    "agricultureDesc": "Refrigeration and heating for agricultural machinery.",
+    "addvoltTitle": "AddVolt",
+    "addvoltDesc": "Axle energy storage battery solutions.",
+    "vulcanTitle": "VULCAN Lockring",
+    "vulcanDesc": "Aluminum AC pipe repair without disassembly."
   },
   "referencesPage": {
     "title": "References",
@@ -126,5 +151,99 @@
     "vehiclesTitle": "Passenger & Commercial Vehicles",
     "vehiclesDesc": "Air conditioning service and repair for passenger and commercial vehicles. R-1234YF refrigerant.",
     "ctaTitle": "Ask about our references"
+  },
+  "companyPage": {
+    "title": "Company",
+    "subtitle": "Turun Thermohuolto Oy — reliable service since 2004.",
+    "historyTitle": "History",
+    "historyP1": "We started operations on March 1, 2004 in the Oriketo district of Turku. Our specialty is vehicle air conditioning systems, refrigeration units and auxiliary heaters.",
+    "historyP2": "Today we operate from our facilities in Tuulissuo, Lieto, completed in autumn 2010.",
+    "historyP3": "On March 1, 2024, we celebrated our 20th anniversary. Warm thanks to all our customers for their trust and loyalty!",
+    "missionTitle": "Our Mission",
+    "missionExpertise": "Specialization",
+    "missionP1": "Turun Thermohuolto Oy is a refrigeration company specializing in the installation, repair and maintenance of vehicle refrigeration units, also serving as a distribution point for equipment.",
+    "missionAuthority": "Government Authorization",
+    "missionP2": "As authorized by the authorities, we perform testing and calibration activities for transport containers of perishable goods.",
+    "qualityTitle": "Quality & Development",
+    "qualityP1": "Customer needs and service are key development areas. We maintain competence to international testing and calibration laboratory standards.",
+    "staffTitle": "Our Team",
+    "staffP1": "Our staff is committed to following operational guidelines and maintaining their professional skills. Continuous training is everyone's responsibility.",
+    "milestonesTitle": "Milestones",
+    "milestone1": "Operations begin in Oriketo, Turku",
+    "milestone1Year": "2004",
+    "milestone2": "Move to new facilities in Tuulissuo, Lieto",
+    "milestone2Year": "2010",
+    "milestone3": "20th anniversary",
+    "milestone3Year": "2024"
+  },
+  "productsPage": {
+    "title": "Products",
+    "subtitle": "We represent and sell leading refrigeration, heater and air conditioning brands.",
+    "refrigerationTitle": "Refrigeration Units",
+    "heatingTitle": "Heaters & Air Conditioning",
+    "otherTitle": "Other",
+    "usedEquipmentTitle": "Used Equipment & Spare Parts",
+    "usedEquipmentDesc": "We occasionally have used refrigeration units and spare parts available. Ask about availability!",
+    "pipeRepairTitle": "Aluminum Pipe Repair",
+    "pipeRepairDesc": "Air conditioning pipe repair using the VULCAN Lockring method. Repair of rear evaporator pipes in vans and minibuses without removing pipes from the chassis.",
+    "visitWebsite": "Visit website",
+    "askAvailability": "Ask about availability",
+    "ctaTitle": "Need equipment or spare parts?"
+  },
+  "newsPage": {
+    "title": "News",
+    "subtitle": "Latest from Thermohuolto.",
+    "articles": {
+      "thermohuolto-20v": {
+        "title": "Turun Thermohuolto Celebrates 20 Years",
+        "excerpt": "Turun Thermohuolto Oy celebrated its 20th anniversary on March 1, 2024. Warm thanks to all customers for their trust!"
+      },
+      "veneiden-lammitinasennukset": {
+        "title": "Boat Heater Installations Before the Season",
+        "excerpt": "The upcoming boating season is on the horizon! We offer heater installations and maintenance for all sizes of motor and sailing boats."
+      },
+      "ilmastointihuolto-korjaus": {
+        "title": "Air Conditioning Maintenance & Repair",
+        "excerpt": "Summer is coming and so is the need for AC. Expert leak detection and repairs with solid experience."
+      },
+      "lisalammittimien-syyshuollot": {
+        "title": "Autumn Heater Maintenance",
+        "excerpt": "Autumn has truly arrived — now is the right time to check your auxiliary heater's function."
+      },
+      "el-kori-elli-60v": {
+        "title": "EL-Kori Oy's 60th Anniversary Tour",
+        "excerpt": "The first stop of the tour was held at our location in Lieto."
+      },
+      "auto-veneilmastoinnit": {
+        "title": "Vehicle & Boat Air Conditioning",
+        "excerpt": "Remember your vehicle's AC maintenance needs as spring arrives — before the rush."
+      },
+      "eberi-lampopaivat": {
+        "title": "Eberspächer Heating Days",
+        "excerpt": "The importer's representative showcases new products in the heating equipment range."
+      },
+      "alumiinisten-putkien-korjaus": {
+        "title": "Aluminum AC Pipe Repair",
+        "excerpt": "New service: AC pipe repair using the VULCAN Lockring method without removing pipes."
+      },
+      "konvekta-yhteistyo": {
+        "title": "Konvekta AC Maintenance Partnership",
+        "excerpt": "Partnership agreement with MuiCon Oy for bus AC maintenance and repairs."
+      },
+      "uutta-huoltokalustoa": {
+        "title": "New Service Vehicle",
+        "excerpt": "New Mercedes-Benz Sprinter 313 CDI service vehicle in operation."
+      }
+    }
+  },
+  "contactPage": {
+    "title": "Contact",
+    "subtitle": "Don't hesitate to get in touch — we're happy to help!",
+    "staffTitle": "Our Team",
+    "formTitle": "Send a Message",
+    "locationTitle": "Location",
+    "managingDirector": "Managing Director",
+    "atpInspector": "ATP Seasonal Inspections",
+    "mechanic": "Refrigeration Mechanic"
   }
 }

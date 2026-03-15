@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import { Phone, Mail } from "lucide-react";
 import { STAFF } from "@/lib/constants";
 
@@ -10,7 +10,7 @@ function getInitials(name: string) {
 
 export default function TeamSection() {
   const t = useTranslations("team");
-  const locale = useLocale();
+  const tc = useTranslations("contact");
 
   const director = STAFF[0];
   const others = STAFF.slice(1);
@@ -58,12 +58,12 @@ export default function TeamSection() {
                   {director.name}
                 </h3>
                 <p className="text-sm font-semibold mb-2" style={{ color: "#0ACDDF" }}>
-                  {locale === "fi" ? director.role : director.roleEn}
+                  {tc(director.positionKey)}
                 </p>
                 <div className="flex flex-wrap gap-4">
                   {director.phone && (
                     <a
-                      href={`tel:${director.phone.replace(/\s/g, "")}`}
+                      href={director.phoneHref}
                       className="flex items-center gap-1.5 text-sm transition-opacity hover:opacity-70"
                       style={{ color: "#6B7280" }}
                     >
@@ -110,14 +110,14 @@ export default function TeamSection() {
                     {person.name}
                   </h4>
                   <p className="text-xs" style={{ color: "#0ACDDF" }}>
-                    {locale === "fi" ? person.role : person.roleEn}
+                    {tc(person.positionKey)}
                   </p>
                 </div>
               </div>
 
-              {person.phone && (
+              {person.phone && person.phoneHref && (
                 <a
-                  href={`tel:${person.phone.replace(/\s/g, "")}`}
+                  href={person.phoneHref}
                   className="flex items-center gap-1.5 text-xs transition-opacity hover:opacity-70"
                   style={{ color: "#6B7280" }}
                 >

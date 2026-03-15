@@ -8,6 +8,7 @@ import Image from "next/image";
 
 export default function FooterSection() {
   const t = useTranslations("footer");
+  const tn = useTranslations("nav");
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -60,30 +61,23 @@ export default function FooterSection() {
               {t("quickLinks")}
             </h3>
             <nav className="space-y-2">
-              {["services", "brands", "about", "team", "contact"].map((id) => (
+              {[
+                { id: "palvelut", label: "Palvelut" },
+                { id: "tuotteet", label: "Tuotteet" },
+                { id: "yritys", label: "Yritys" },
+                { id: "referenssit", label: "Referenssit" },
+                { id: "uutisia", label: "Uutisia" },
+                { id: "yhteydenotto", label: "Yhteystiedot" },
+              ].map(({ id }) => (
                 <a
                   key={id}
-                  href={`#${id}`}
+                  href={locale === "fi" ? `/${id}` : `/${locale}/${id}`}
                   className="block text-sm transition-opacity hover:opacity-80"
                   style={{ color: "#8A9BB0" }}
                 >
-                  {t(`link_${id}`)}
+                  {tn(id)}
                 </a>
               ))}
-              <a
-                href={locale === "fi" ? "/palvelut" : `/${locale}/palvelut`}
-                className="block text-sm transition-opacity hover:opacity-80"
-                style={{ color: "#8A9BB0" }}
-              >
-                {t("link_palvelut")}
-              </a>
-              <a
-                href={locale === "fi" ? "/referenssit" : `/${locale}/referenssit`}
-                className="block text-sm transition-opacity hover:opacity-80"
-                style={{ color: "#8A9BB0" }}
-              >
-                {t("link_referenssit")}
-              </a>
             </nav>
           </div>
 

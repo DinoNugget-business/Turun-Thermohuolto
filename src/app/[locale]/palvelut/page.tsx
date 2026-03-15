@@ -1,6 +1,7 @@
 import { useTranslations, useLocale } from "next-intl";
 import { SERVICES, CONTACT } from "@/lib/constants";
-import * as Icons from "lucide-react";
+import Icon from "@/components/ui/Icon";
+import type { IconName } from "@/components/ui/Icon";
 import { Phone, ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import FooterSection from "@/components/sections/FooterSection";
@@ -14,6 +15,20 @@ const SERVICE_IMAGES: Record<string, string> = {
   bio: "/images/references/bio-refrigeration.jpg",
   agriculture: "/images/references/tractors-equipment.jpg",
   vulcan: "/images/news/mercedes-service.jpg",
+};
+
+/* Map service.id → translation key prefix in servicesPage */
+const T_KEY: Record<string, string> = {
+  refrigeration: "refrigeration",
+  heating: "heating",
+  ac: "ac",
+  electrical: "electrical",
+  atp: "atp",
+  bio: "bio",
+  "boat-rv": "boatRv",
+  agriculture: "agriculture",
+  addvolt: "addvolt",
+  vulcan: "vulcan",
 };
 
 export default function PalvelutPage() {
@@ -66,9 +81,8 @@ export default function PalvelutPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {SERVICES.map((service) => {
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              const IconComp = (Icons as any)[service.icon] as React.ComponentType<{ className?: string; style?: React.CSSProperties }> | undefined;
               const imgSrc = SERVICE_IMAGES[service.id];
+              const tKey = T_KEY[service.id] || service.id;
 
               return (
                 <div
@@ -79,7 +93,7 @@ export default function PalvelutPage() {
                     <div className="relative h-48 overflow-hidden">
                       <Image
                         src={imgSrc}
-                        alt={locale === "fi" ? service.fi : service.en}
+                        alt={t(`${tKey}Title`)}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                         sizes="(max-width: 768px) 100vw, 50vw"
@@ -97,17 +111,17 @@ export default function PalvelutPage() {
                         className="w-12 h-12 rounded-lg flex items-center justify-center shrink-0"
                         style={{ backgroundColor: "rgba(10,205,223,0.08)" }}
                       >
-                        {IconComp && <IconComp className="w-6 h-6" style={{ color: "#0ACDDF" }} />}
+                        <Icon name={service.icon as IconName} size={24} className="text-cyan" />
                       </div>
                       <div>
                         <h2
                           className="text-xl font-bold mb-2"
                           style={{ fontFamily: "var(--font-display)", color: "#1B3A5C" }}
                         >
-                          {locale === "fi" ? service.fi : service.en}
+                          {t(`${tKey}Title`)}
                         </h2>
                         <p className="text-sm leading-relaxed mb-4" style={{ color: "#6B7280" }}>
-                          {locale === "fi" ? service.descFi : service.descEn}
+                          {t(`${tKey}Desc`)}
                         </p>
                         <a
                           href={CONTACT.phoneHref}

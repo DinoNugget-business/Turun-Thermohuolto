@@ -4,15 +4,22 @@
     "description": "Ajoneuvojen kylmäkoneiden, lisälämmittimien ja ilmastointilaitteiden asennus, korjaus ja huolto. 24/7 päivystys. Lieto."
   },
   "nav": {
-    "services": "Palvelut",
-    "palvelut": "Kaikki palvelut",
-    "brands": "Merkit",
-    "about": "Meistä",
+    "home": "Etusivu",
+    "palvelut": "Palvelut",
+    "tuotteet": "Tuotteet",
+    "yritys": "Yritys",
     "referenssit": "Referenssit",
-    "team": "Tiimi",
-    "contact": "Yhteystiedot",
+    "uutisia": "Uutisia",
+    "yhteydenotto": "Yhteystiedot",
     "emergency": "Päivystys 24/7:",
     "backHome": "Takaisin etusivulle"
+  },
+  "common": {
+    "callUs": "Soita meille",
+    "emailField": "Sähköposti",
+    "directions": "Ajo-ohjeet",
+    "contactUs": "Ota yhteyttä",
+    "emergencyService": "Päivystys 24/7"
   },
   "hero": {
     "category": "Kylmäkoneet · Lämmittimet · Ilmastointi",
@@ -90,18 +97,16 @@
     "formPhone": "Puhelinnumerosi",
     "formMessage": "Viestisi...",
     "formSubmit": "Lähetä viesti",
-    "formSuccess": "Kiitos viestistäsi! Otamme yhteyttä mahdollisimman pian."
+    "formSuccess": "Kiitos viestistäsi! Otamme yhteyttä mahdollisimman pian.",
+    "staffTitle": "Henkilöstö",
+    "locationTitle": "Sijainti",
+    "managingDirector": "Toimitusjohtaja",
+    "atpInspector": "ATP-kausitarkastukset",
+    "mechanic": "Kylmäkonemekaanikko"
   },
   "footer": {
     "description": "Ajoneuvojen kylmäkoneiden, lisälämmittimien ja ilmastointilaitteiden ammattilainen Lietossa.",
     "quickLinks": "Pikalinkit",
-    "link_services": "Palvelut",
-    "link_brands": "Merkit",
-    "link_about": "Meistä",
-    "link_team": "Tiimi",
-    "link_contact": "Yhteystiedot",
-    "link_palvelut": "Kaikki palvelut",
-    "link_referenssit": "Referenssit",
     "contactTitle": "Yhteystiedot",
     "emergency": "Päivystys 24/7:",
     "rights": "Kaikki oikeudet pidätetään.",
@@ -110,7 +115,27 @@
   "servicesPage": {
     "title": "Palvelumme",
     "subtitle": "Tarjoamme ammattitaitoista asennusta, korjausta ja huoltoa kaikille merkki- ja ajoneuvokylmälaitteille, lämmittimille sekä ilmastointilaitteille.",
-    "ctaTitle": "Tarvitsetko huoltoa tai asennusta?"
+    "ctaTitle": "Tarvitsetko huoltoa tai asennusta?",
+    "refrigerationTitle": "Kylmäkoneet",
+    "refrigerationDesc": "Kylmäketjusi katkeamatta — kaikkien merkkien kylmäkoneiden huolto ja korjaus.",
+    "heatingTitle": "Lisälämmittimet",
+    "heatingDesc": "Webasto- ja Eberspächer-lisälämmittimien myynti, asennus, huolto ja korjaus.",
+    "acTitle": "Ilmastointi",
+    "acDesc": "Ilmastointilaitteiden asennus, huolto ja korjaus kaikille ajoneuvotyypeille.",
+    "electricalTitle": "Autosähkötyöt",
+    "electricalDesc": "Jätepuristimet, takalaitanostimet ja sähkötyöt.",
+    "atpTitle": "ATP-tarkastukset",
+    "atpDesc": "Elintarvikekuljetusvälineiden virallinen kausitarkastus.",
+    "bioTitle": "Biokylmälaitteet",
+    "bioDesc": "Lumikko-biokylmäkoneiden myynti ja huolto.",
+    "boatRvTitle": "Veneet & matkailuautot",
+    "boatRvDesc": "Lämmittimien asennus, korjaus ja huolto.",
+    "agricultureTitle": "Traktorit & työkoneet",
+    "agricultureDesc": "Maatalous- ja työkoneiden kylmä- ja lämpölaitteet.",
+    "addvoltTitle": "AddVolt",
+    "addvoltDesc": "Akselienergiaa hyödyntävät akkuratkaisut.",
+    "vulcanTitle": "VULCAN Lockring",
+    "vulcanDesc": "Alumiini-ilmastointiputkien korjaus ilman purkamista."
   },
   "referencesPage": {
     "title": "Referenssit",
@@ -126,5 +151,99 @@
     "vehiclesTitle": "Henkilö- ja hyötyajoneuvot",
     "vehiclesDesc": "Ilmastoinnin huolto ja korjaus henkilö- ja hyötyajoneuvoihin. R-1234YF kylmäaine.",
     "ctaTitle": "Kysy lisää referensseistämme"
+  },
+  "companyPage": {
+    "title": "Yritys",
+    "subtitle": "Turun Thermohuolto Oy — luotettavaa palvelua vuodesta 2004.",
+    "historyTitle": "Historia",
+    "historyP1": "Olemme aloittaneet toimintamme 1.3.2004 Turun Orikedolla. Erikoisalaamme ovat autojen ilmastointilaitteet, kylmäkoneet ja lisälämmittimet.",
+    "historyP2": "Nykyään toimimme syksyllä 2010 valmistuneissa toimitiloissa Liedon Tuulissuolla.",
+    "historyP3": "1.3.2024 juhlistimme 20-vuotista toimintaamme. Lämmin kiitos kaikille asiakkuudesta ja luottamuksesta!",
+    "missionTitle": "Toiminta-ajatus",
+    "missionExpertise": "Erikoistuminen",
+    "missionP1": "Turun Thermohuolto Oy on pääasiallisesti ajoneuvoissa käytettävien kylmäkoneiden asennukseen, korjaukseen ja huoltoon erikoistunut kylmäalan yritys.",
+    "missionAuthority": "Viranomaisvaltuutus",
+    "missionP2": "Suoritamme viranomaisen valtuuttamana testaus- ja kalibrointitoimintaa helposti pilaantuvan tavaran kuljetustiloihin.",
+    "qualityTitle": "Laatu ja kehitys",
+    "qualityP1": "Asiakastarpeet ja -palvelu ovat meille tärkeät kehittämisalueet. Ylläpidämme kansainvälisten standardien mukaista pätevyyttä.",
+    "staffTitle": "Henkilöstö",
+    "staffP1": "Henkilöstömme sitoutuu noudattamaan toimintaohjeita ja ylläpitämään ammattitaitoaan.",
+    "milestonesTitle": "Virstanpylväät",
+    "milestone1": "Toiminnan aloitus Turun Orikedolla",
+    "milestone1Year": "2004",
+    "milestone2": "Muutto uusiin toimitiloihin Liedon Tuulissuolle",
+    "milestone2Year": "2010",
+    "milestone3": "20-vuotisjuhla",
+    "milestone3Year": "2024"
+  },
+  "productsPage": {
+    "title": "Tuotteet",
+    "subtitle": "Edustamme ja myymme johtavia kylmäkone-, lämmitin- ja ilmastointimerkkejä.",
+    "refrigerationTitle": "Kylmäkoneet",
+    "heatingTitle": "Lämmittimet ja ilmastointi",
+    "otherTitle": "Muut",
+    "usedEquipmentTitle": "Käytetyt laitteet ja varaosat",
+    "usedEquipmentDesc": "Meillä on ajoittain tarjolla käytettyjä kylmäkoneita ja varaosia. Kysy saatavuutta!",
+    "pipeRepairTitle": "Alumiiniputkien korjaus",
+    "pipeRepairDesc": "Ilmastointiputkien korjaus VULCAN Lockring -menetelmällä. Paketti- ja pikkubussien takapenkkien höyrystimen putkien korjaus ilman putkien irrotusta alustasta.",
+    "visitWebsite": "Vieraile sivustolla",
+    "askAvailability": "Kysy saatavuutta",
+    "ctaTitle": "Tarvitsetko laitteita tai varaosia?"
+  },
+  "newsPage": {
+    "title": "Uutisia",
+    "subtitle": "Ajankohtaista Thermohuollolta.",
+    "articles": {
+      "thermohuolto-20v": {
+        "title": "Turun Thermohuolto 20 vuotta",
+        "excerpt": "Turun Thermohuolto Oy juhli 20-vuotista toimintaansa 1.3.2024. Lämmin kiitos kaikille asiakkuudesta!"
+      },
+      "veneiden-lammitinasennukset": {
+        "title": "Veneiden lämmitinasennukset ja huollot ennen kauden alkua",
+        "excerpt": "Tuleva veneilykausi siintää jo horisontissa! Tarjoamme lämmitinasennuksia ja -huoltoja."
+      },
+      "ilmastointihuolto-korjaus": {
+        "title": "Ilmastointihuolto/korjaus",
+        "excerpt": "Kesä tulevi ja ilmastointitarve myös. Meiltä vuodonetsinnät ja korjaukset vankalla kokemuksella."
+      },
+      "lisalammittimien-syyshuollot": {
+        "title": "Lisälämmittimien syyshuollot",
+        "excerpt": "Syksy on toden teolla saapunut — nyt on oikea aika tarkastaa lisälämmittimen toiminta."
+      },
+      "el-kori-elli-60v": {
+        "title": "EL-Kori Oy:n Elli 60v. kiertue",
+        "excerpt": "Kiertueen ensimmäinen etappi pidettiin meillä Liedossa."
+      },
+      "auto-veneilmastoinnit": {
+        "title": "Auto- ja veneilmastoinnit",
+        "excerpt": "Huomioithan autosi ilmastoinnin huolto- ja korjaustarpeen kevään koittaessa."
+      },
+      "eberi-lampopaivat": {
+        "title": "Eberi lämpöpäivät",
+        "excerpt": "Maahantuojan edustaja esittelee uutuustuotteita lämpölaitteiden saralta."
+      },
+      "alumiinisten-putkien-korjaus": {
+        "title": "Alumiinisten ilmastointiputkien korjaus",
+        "excerpt": "Uusi palvelu: ilmastointiputkien korjaus VULCAN Lockring -menetelmällä."
+      },
+      "konvekta-yhteistyo": {
+        "title": "Yhteistyösopimus Konvekta-ilmastointilaitteiden huolloista",
+        "excerpt": "Yhteistyösopimus MuiCon Oy:n kanssa linja-autojen ilmastointilaitteiden huolloista."
+      },
+      "uutta-huoltokalustoa": {
+        "title": "Uutta huoltokalustoa",
+        "excerpt": "Uusi Mercedes-Benz Sprinter 313 CDI huoltoauto käyttöön."
+      }
+    }
+  },
+  "contactPage": {
+    "title": "Yhteydenotto",
+    "subtitle": "Ota rohkeasti yhteyttä — autamme mielellämme!",
+    "staffTitle": "Henkilöstö",
+    "formTitle": "Lähetä viesti",
+    "locationTitle": "Sijainti",
+    "managingDirector": "Toimitusjohtaja",
+    "atpInspector": "ATP-kausitarkastukset",
+    "mechanic": "Kylmäkonemekaanikko"
   }
 }

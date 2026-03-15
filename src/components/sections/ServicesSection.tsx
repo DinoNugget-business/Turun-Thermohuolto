@@ -1,8 +1,9 @@
 "use client";
 
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import { SERVICES } from "@/lib/constants";
-import * as Icons from "lucide-react";
+import Icon from "@/components/ui/Icon";
+import type { IconName } from "@/components/ui/Icon";
 import Image from "next/image";
 
 const FEATURED_IDS = ["refrigeration", "heating", "ac"] as const;
@@ -13,9 +14,23 @@ const FEATURED_IMAGES: Record<string, string> = {
   ac: "/images/news/ac-service.jpg",
 };
 
+/* Map service.id → translation key prefix in servicesPage */
+const T_KEY: Record<string, string> = {
+  refrigeration: "refrigeration",
+  heating: "heating",
+  ac: "ac",
+  electrical: "electrical",
+  atp: "atp",
+  bio: "bio",
+  "boat-rv": "boatRv",
+  agriculture: "agriculture",
+  addvolt: "addvolt",
+  vulcan: "vulcan",
+};
+
 export default function ServicesSection() {
   const t = useTranslations("services");
-  const locale = useLocale();
+  const ts = useTranslations("servicesPage");
 
   const featured = SERVICES.filter((s) => FEATURED_IDS.includes(s.id as typeof FEATURED_IDS[number]));
   const compact = SERVICES.filter((s) => !FEATURED_IDS.includes(s.id as typeof FEATURED_IDS[number]));
@@ -39,20 +54,18 @@ export default function ServicesSection() {
         {/* Featured trio — cards with images */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10 stagger-sm">
           {featured.map((service) => {
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            const IconComp = (Icons as any)[service.icon] as React.ComponentType<{ className?: string; style?: React.CSSProperties }> | undefined;
             const imgSrc = FEATURED_IMAGES[service.id];
+            const tKey = T_KEY[service.id] || service.id;
             return (
               <div
                 key={service.id}
                 className="elevated-card rounded-xl overflow-hidden animate-on-scroll group"
               >
-                {/* Image */}
                 {imgSrc && (
                   <div className="relative h-40 overflow-hidden">
                     <Image
                       src={imgSrc}
-                      alt={locale === "fi" ? service.fi : service.en}
+                      alt={ts(`${tKey}Title`)}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                       sizes="(max-width: 768px) 100vw, 33vw"
@@ -69,16 +82,16 @@ export default function ServicesSection() {
                     className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
                     style={{ backgroundColor: "rgba(10,205,223,0.08)" }}
                   >
-                    {IconComp && <IconComp className="w-6 h-6" style={{ color: "#0ACDDF" }} />}
+                    <Icon name={service.icon as IconName} size={24} className="text-cyan" />
                   </div>
                   <h3
                     className="text-xl font-bold mb-2"
                     style={{ fontFamily: "var(--font-display)", color: "#1B3A5C" }}
                   >
-                    {locale === "fi" ? service.fi : service.en}
+                    {ts(`${tKey}Title`)}
                   </h3>
                   <p className="text-sm leading-relaxed" style={{ color: "#6B7280" }}>
-                    {locale === "fi" ? service.descFi : service.descEn}
+                    {ts(`${tKey}Desc`)}
                   </p>
                 </div>
               </div>
@@ -89,8 +102,7 @@ export default function ServicesSection() {
         {/* Compact list — remaining services */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1">
           {compact.map((service) => {
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            const IconComp = (Icons as any)[service.icon] as React.ComponentType<{ className?: string; style?: React.CSSProperties }> | undefined;
+            const tKey = T_KEY[service.id] || service.id;
             return (
               <div
                 key={service.id}
@@ -101,14 +113,14 @@ export default function ServicesSection() {
                   className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
                   style={{ backgroundColor: "rgba(10,205,223,0.06)" }}
                 >
-                  {IconComp && <IconComp className="w-4 h-4" style={{ color: "#0ACDDF" }} />}
+                  <Icon name={service.icon as IconName} size={16} className="text-cyan" />
                 </div>
                 <div className="min-w-0">
                   <h4 className="font-semibold text-sm" style={{ color: "#1B3A5C" }}>
-                    {locale === "fi" ? service.fi : service.en}
+                    {ts(`${tKey}Title`)}
                   </h4>
                   <p className="text-xs" style={{ color: "#6B7280" }}>
-                    {locale === "fi" ? service.descFi : service.descEn}
+                    {ts(`${tKey}Desc`)}
                   </p>
                 </div>
               </div>
