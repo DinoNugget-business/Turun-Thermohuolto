@@ -1,11 +1,40 @@
+import type { Metadata } from "next";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { getTranslations } from "next-intl/server";
+
+import { SITE, WEBSITE_URL } from "@/lib/constants";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "newsPage" });
+  return {
+    title: t("title"),
+    description: t("subtitle"),
+    alternates: {
+      canonical: `${WEBSITE_URL}/${locale}/uutisia`,
+      languages: { fi: `${WEBSITE_URL}/fi/uutisia`, en: `${WEBSITE_URL}/en/uutisia` },
+    },
+    openGraph: {
+      title: t("title"),
+      description: t("subtitle"),
+      url: `${WEBSITE_URL}/${locale}/uutisia`,
+      type: "website",
+      siteName: SITE.name,
+      locale: locale === "fi" ? "fi_FI" : "en_US",
+    },
+    twitter: { card: "summary", title: t("title"), description: t("subtitle") },
+  };
+}
 import { NEWS_ARTICLES } from "@/lib/news-data";
 import PageHeader from "@/components/layout/PageHeader";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import FooterSection from "@/components/sections/FooterSection";
 
 export default function NewsPage() {
   const t = useTranslations("newsPage");
+  const locale = useLocale();
+  const dateLocale = locale === "fi" ? "fi-FI" : "en-US";
 
   const featured = NEWS_ARTICLES[0];
   const rest = NEWS_ARTICLES.slice(1);
@@ -32,16 +61,13 @@ export default function NewsPage() {
               )}
               <div className="p-6 sm:p-8 flex flex-col justify-center">
                 <time className="text-xs text-text-dim font-medium">
-                  {new Date(featured.date).toLocaleDateString("fi-FI", {
+                  {new Date(featured.date).toLocaleDateString(dateLocale, {
                     day: "numeric",
                     month: "long",
                     year: "numeric",
                   })}
                 </time>
-                <h2
-                  className="font-bold text-2xl mt-2 mb-3 text-text"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
+                <h2 className="font-bold text-2xl mt-2 mb-3 text-text font-display">
                   {t(`articles.${featured.id}.title`)}
                 </h2>
                 <p className="text-text-muted leading-relaxed">
@@ -69,16 +95,13 @@ export default function NewsPage() {
                   )}
                   <div className="p-5">
                     <time className="text-xs text-text-dim font-medium">
-                      {new Date(article.date).toLocaleDateString("fi-FI", {
+                      {new Date(article.date).toLocaleDateString(dateLocale, {
                         day: "numeric",
                         month: "numeric",
                         year: "numeric",
                       })}
                     </time>
-                    <h2
-                      className="font-semibold text-lg mt-1 mb-2 text-text"
-                      style={{ fontFamily: "var(--font-display)" }}
-                    >
+                    <h2 className="font-semibold text-lg mt-1 mb-2 text-text font-display">
                       {t(`articles.${article.id}.title`)}
                     </h2>
                     <p className="text-sm text-text-muted leading-relaxed">
@@ -91,6 +114,8 @@ export default function NewsPage() {
           </div>
         </div>
       </section>
+
+      <FooterSection />
     </>
   );
 }

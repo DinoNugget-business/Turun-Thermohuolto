@@ -16,110 +16,91 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-20 sm:py-24 px-5" style={{ backgroundColor: "#FAFAF8" }}>
+    <section id="contact" className="py-20 sm:py-24 px-5 bg-warm-white">
       <div className="max-w-6xl mx-auto">
-        {/* Emergency banner */}
-        <a
-          href={CONTACT.emergencyHref}
-          className="flex items-center gap-3 rounded-xl overflow-hidden mb-12 transition-all hover:opacity-90 animate-on-scroll"
-          style={{ backgroundColor: "rgba(232,92,42,0.06)", border: "1px solid rgba(232,92,42,0.15)" }}
-        >
-          <div className="w-1.5 self-stretch" style={{ backgroundColor: "#E85C2A" }} />
-          <div className="flex items-center gap-3 py-4 pr-5">
-            <Phone className="w-5 h-5" style={{ color: "#E85C2A" }} />
-            <div>
-              <p className="text-xs font-semibold" style={{ color: "#E85C2A" }}>
-                {t("emergencyLabel")}
-              </p>
-              <p className="text-lg font-bold" style={{ color: "#1B3A5C" }}>
-                {CONTACT.emergency}
-              </p>
-            </div>
-          </div>
-        </a>
-
         {/* Heading */}
-        <div className="accent-bar mb-12 animate-on-scroll">
-          <h2
-            className="text-3xl sm:text-4xl font-extrabold mb-2"
-            style={{ fontFamily: "var(--font-display)", color: "#1B3A5C" }}
-          >
-            {t("title")}
-          </h2>
-          <p className="text-base" style={{ color: "#6B7280" }}>
+        <div className="mb-12 animate-on-scroll">
+          <p className="text-xs tracking-[0.2em] uppercase font-medium text-cyan mb-3 font-display">
             {t("subtitle")}
           </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-steel font-display">
+            {t("title")}
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Left — contact info + form */}
           <div>
             {/* Contact info list */}
-            <div className="space-y-3 mb-8 animate-on-scroll">
+            <div className="space-y-0 mb-8 animate-on-scroll">
               <ContactRow
-                icon={<Phone className="w-4 h-4" style={{ color: "#0ACDDF" }} />}
+                icon={<Phone className="w-4 h-4 text-cyan" />}
                 label={t("phone")}
                 value={CONTACT.phone}
                 href={CONTACT.phoneHref}
               />
               <ContactRow
-                icon={<Mail className="w-4 h-4" style={{ color: "#0ACDDF" }} />}
+                icon={<Mail className="w-4 h-4 text-cyan" />}
                 label={t("email")}
                 value={CONTACT.email}
                 href={`mailto:${CONTACT.email}`}
               />
               <ContactRow
-                icon={<MapPin className="w-4 h-4" style={{ color: "#0ACDDF" }} />}
+                icon={<MapPin className="w-4 h-4 text-cyan" />}
                 label={t("address")}
                 value={CONTACT.fullAddress}
               />
             </div>
 
-            {/* Interactive form */}
+            {/* Form */}
             <div className="elevated-card rounded-xl p-6 animate-on-scroll">
-              <h3
-                className="text-lg font-bold mb-4"
-                style={{ fontFamily: "var(--font-display)", color: "#1B3A5C" }}
-              >
+              <h3 className="text-lg font-bold mb-4 font-display text-steel">
                 {t("formTitle")}
               </h3>
 
               {submitted ? (
                 <div className="text-center py-8">
-                  <CheckCircle className="w-10 h-10 mx-auto mb-3" style={{ color: "#0ACDDF" }} />
-                  <p className="font-semibold" style={{ color: "#1B3A5C" }}>
+                  <CheckCircle className="w-10 h-10 mx-auto mb-3 text-cyan" />
+                  <p className="font-semibold text-steel">
                     {t("formSuccess")}
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-3">
-                  <input
-                    type="text"
-                    placeholder={t("formName")}
-                    className="form-input"
-                    required
-                  />
-                  <input
-                    type="email"
-                    placeholder={t("formEmail")}
-                    className="form-input"
-                    required
-                  />
-                  <input
-                    type="tel"
-                    placeholder={t("formPhone")}
-                    className="form-input"
-                  />
-                  <textarea
-                    placeholder={t("formMessage")}
-                    rows={4}
-                    className="form-input resize-none"
-                    required
-                  />
+                  <label className="block">
+                    <span className="text-sm font-medium text-steel">{t("formName")} *</span>
+                    <input
+                      type="text"
+                      className="form-input mt-1"
+                      required
+                    />
+                  </label>
+                  <label className="block">
+                    <span className="text-sm font-medium text-steel">{t("formEmail")} *</span>
+                    <input
+                      type="email"
+                      className="form-input mt-1"
+                      required
+                    />
+                  </label>
+                  <label className="block">
+                    <span className="text-sm font-medium text-steel">{t("formPhone")}</span>
+                    <input
+                      type="tel"
+                      className="form-input mt-1"
+                    />
+                  </label>
+                  <label className="block">
+                    <span className="text-sm font-medium text-steel">{t("formMessage")} *</span>
+                    <textarea
+                      rows={4}
+                      className="form-input mt-1 resize-none"
+                      required
+                    />
+                  </label>
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-lg text-sm font-semibold text-white transition-all hover:opacity-90"
-                    style={{ backgroundColor: "#0ACDDF" }}
+                    className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-lg text-sm font-semibold text-white bg-cyan hover:bg-cyan-dark transition-colors"
                   >
                     <Send className="w-4 h-4" />
                     {t("formSubmit")}
@@ -130,8 +111,8 @@ export default function ContactSection() {
           </div>
 
           {/* Right — map + facility image */}
-          <div className="animate-on-scroll space-y-4">
-            <div className="relative rounded-xl overflow-hidden min-h-[350px]" style={{ border: "1px solid #E8E4DF" }}>
+          <div className="animate-on-scroll anim-fadeRight space-y-4">
+            <div className="relative rounded-xl overflow-hidden min-h-[350px] border border-concrete-dark">
               <iframe
                 src={GOOGLE_MAPS_EMBED}
                 width="100%"
@@ -145,8 +126,8 @@ export default function ContactSection() {
               {/* Floating address card */}
               <div className="absolute bottom-4 left-4 right-4 sm:left-4 sm:right-auto sm:max-w-xs elevated-card rounded-lg p-4">
                 <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 shrink-0" style={{ color: "#0ACDDF" }} />
-                  <p className="text-sm font-semibold" style={{ color: "#1B3A5C" }}>
+                  <MapPin className="w-4 h-4 shrink-0 text-cyan" />
+                  <p className="text-sm font-semibold text-steel">
                     {CONTACT.fullAddress}
                   </p>
                 </div>
@@ -162,10 +143,7 @@ export default function ContactSection() {
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div
-                className="absolute inset-0"
-                style={{ background: "linear-gradient(to top, rgba(27,58,92,0.6) 0%, transparent 60%)" }}
-              />
+              <div className="absolute inset-0 bg-gradient-to-t from-steel/60 to-transparent" />
               <div className="absolute bottom-4 left-4">
                 <p className="text-sm font-bold text-white">{CONTACT.fullAddress}</p>
               </div>
@@ -189,11 +167,11 @@ function ContactRow({
   href?: string;
 }) {
   const inner = (
-    <div className="flex items-center gap-3 py-3" style={{ borderBottom: "1px solid #E8E4DF" }}>
+    <div className="flex items-center gap-3 py-3 border-b border-concrete">
       {icon}
       <div>
-        <p className="text-xs" style={{ color: "#6B7280" }}>{label}</p>
-        <p className="text-sm font-semibold" style={{ color: "#1B3A5C" }}>{value}</p>
+        <p className="text-xs text-text-muted">{label}</p>
+        <p className="text-sm font-semibold text-steel">{value}</p>
       </div>
     </div>
   );

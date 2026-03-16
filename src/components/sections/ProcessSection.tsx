@@ -1,86 +1,52 @@
-"use client";
-
-import { useTranslations } from "next-intl";
-import { Phone, Search, Wrench, ShieldCheck } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
 const STEPS = [
-  { icon: Phone, key: "step1" },
-  { icon: Search, key: "step2" },
-  { icon: Wrench, key: "step3" },
-  { icon: ShieldCheck, key: "step4" },
+  { key: "step1", num: "01" },
+  { key: "step2", num: "02" },
+  { key: "step3", num: "03" },
+  { key: "step4", num: "04" },
 ] as const;
 
-export default function ProcessSection() {
-  const t = useTranslations("process");
+export default async function ProcessSection() {
+  const t = await getTranslations("process");
 
   return (
-    <section
-      className="clip-diagonal-top py-20 sm:py-24 px-5"
-      style={{ backgroundColor: "#1B3A5C" }}
-    >
+    <section className="py-20 sm:py-24 px-5 bg-steel">
       <div className="max-w-5xl mx-auto">
-        {/* Heading */}
-        <div className="text-center mb-14 animate-on-scroll">
-          <h2
-            className="text-3xl sm:text-4xl font-extrabold mb-2"
-            style={{ fontFamily: "var(--font-display)", color: "#F5F5F5" }}
-          >
-            {t("title")}
-          </h2>
-          <p className="text-base max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.5)" }}>
+        {/* Heading — left-aligned, not centered */}
+        <div className="mb-14 animate-on-scroll">
+          <p className="text-xs tracking-[0.2em] uppercase font-medium text-cyan mb-3 font-display">
             {t("subtitle")}
           </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-text-light font-display">
+            {t("title")}
+          </h2>
         </div>
 
-        {/* Steps */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 stagger-sm">
-          {STEPS.map((step, i) => {
-            const Icon = step.icon;
-            return (
-              <div key={step.key} className="relative text-center animate-on-scroll">
-                {/* Step number watermark */}
-                <span
-                  className="absolute -top-2 left-1/2 -translate-x-1/2 text-7xl font-extrabold pointer-events-none select-none"
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    color: "rgba(10,205,223,0.06)",
-                    lineHeight: 1,
-                  }}
-                >
-                  {i + 1}
-                </span>
+        {/* Steps as horizontal rows, not identical columns */}
+        <div className="space-y-0">
+          {STEPS.map((step, i) => (
+            <div
+              key={step.key}
+              className={`animate-on-scroll ${i % 2 === 0 ? "" : "anim-fadeRight"} flex items-start gap-6 sm:gap-8 py-6 ${
+                i < STEPS.length - 1 ? "border-b border-dark-border/40" : ""
+              }`}
+            >
+              {/* Step number */}
+              <span className="font-display text-3xl sm:text-4xl font-bold text-cyan/20 shrink-0 w-12 sm:w-16">
+                {step.num}
+              </span>
 
-                {/* Icon */}
-                <div
-                  className="relative w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4"
-                  style={{
-                    backgroundColor: "rgba(10,205,223,0.1)",
-                    border: "1px solid rgba(10,205,223,0.2)",
-                  }}
-                >
-                  <Icon className="w-6 h-6" style={{ color: "#0ACDDF" }} />
-                </div>
-
-                <h3
-                  className="text-lg font-bold mb-1"
-                  style={{ fontFamily: "var(--font-display)", color: "#F5F5F5" }}
-                >
+              <div>
+                <h3 className="text-lg font-semibold text-text-light font-display mb-1">
                   {t(`${step.key}Title`)}
                 </h3>
-                <p className="text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
+                <p className="text-sm text-text-light/50 max-w-md leading-relaxed">
                   {t(`${step.key}Desc`)}
                 </p>
-
-                {/* Dashed connector (desktop only, not after last) */}
-                {i < STEPS.length - 1 && (
-                  <div
-                    className="hidden lg:block absolute top-7 -right-3 w-6 border-t-2 border-dashed"
-                    style={{ borderColor: "rgba(10,205,223,0.2)" }}
-                  />
-                )}
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -21,12 +21,12 @@ export default function StaffCard({ name, position, phone, phoneHref, email }: P
   return (
     <div className="light-card rounded-xl p-5 text-center">
       <div className="w-14 h-14 rounded-full bg-steel/10 flex items-center justify-center mx-auto mb-3">
-        <span className="font-bold text-lg text-steel" style={{ fontFamily: "var(--font-display)" }}>
+        <span className="font-bold text-lg text-steel font-display">
           {getInitials(name)}
         </span>
       </div>
 
-      <h3 className="font-semibold text-base text-text mb-1" style={{ fontFamily: "var(--font-display)" }}>
+      <h3 className="font-semibold text-base text-text mb-1 font-display">
         {name}
       </h3>
       <p className="text-sm text-text-muted mb-3">{position}</p>
@@ -44,6 +44,7 @@ export default function StaffCard({ name, position, phone, phoneHref, email }: P
         {email && (
           <a
             href={`mailto:${email}`}
+            title={email}
             className="inline-flex items-center justify-center gap-1.5 text-sm text-steel hover:text-cyan transition-colors truncate"
           >
             <Icon name="mail" size={14} />

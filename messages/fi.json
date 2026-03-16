@@ -12,7 +12,9 @@
     "uutisia": "Uutisia",
     "yhteydenotto": "Yhteystiedot",
     "emergency": "Päivystys 24/7:",
-    "backHome": "Takaisin etusivulle"
+    "backHome": "Takaisin etusivulle",
+    "notFoundText": "Sivua ei löytynyt",
+    "homeLink": "Turun Thermohuolto Oy — Etusivu"
   },
   "common": {
     "callUs": "Soita meille",
@@ -40,7 +42,10 @@
   },
   "services": {
     "title": "Palvelumme",
-    "subtitle": "Ammattitaitoista asennusta, korjausta ja huoltoa kaikille merkki- ja ajoneuvokylmälaitteille, lämmittimille sekä ilmastointilaitteille."
+    "subtitle": "Ammattitaitoista asennusta, korjausta ja huoltoa kaikille merkki- ja ajoneuvokylmälaitteille, lämmittimille sekä ilmastointilaitteille.",
+    "groupCold": "Kylmälaitteet",
+    "groupHeat": "Lämmitys & ilmastointi",
+    "groupSpecialist": "Erikoispalvelut"
   },
   "brands": {
     "title": "Edustamamme merkit",
@@ -50,6 +55,7 @@
     "catAc": "Ilmastointi"
   },
   "about": {
+    "label": "Yritys",
     "title": "Yrityksen tarina",
     "description": "Turun Thermohuolto Oy on erikoistunut ajoneuvoissa käytettävien kylmäkoneiden asennukseen, korjaukseen ja huoltoon. Toimimme valtuutettuna kylmälaitemyyjänä ja tarjoamme viranomaismääräysten edellyttämiä testaus- ja kalibrointipalveluja.",
     "milestone1": "Yritys perustettu Turussa, Oriketon kaupunginosassa",

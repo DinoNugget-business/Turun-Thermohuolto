@@ -1,6 +1,4 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 
 const BRAND_LOGOS: Record<string, { src: string; width: number; height: number }> = {
@@ -30,33 +28,27 @@ const CATEGORIES: Category[] = [
   { key: "catAc", brands: ["Mercedes-Benz", "Setra", "EvoBus", "Finnotzo", "Sutrak", "Konvekta"] },
 ];
 
-export default function BrandsSection() {
-  const t = useTranslations("brands");
+export default async function BrandsSection() {
+  const t = await getTranslations("brands");
 
   return (
-    <section id="brands" className="py-20 sm:py-24 px-5" style={{ backgroundColor: "#FAFAF8" }}>
+    <section id="brands" className="py-20 sm:py-24 px-5 bg-bg-light">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
-        <div className="accent-bar mb-14 animate-on-scroll">
-          <h2
-            className="text-3xl sm:text-4xl font-extrabold mb-2"
-            style={{ fontFamily: "var(--font-display)", color: "#1B3A5C" }}
-          >
-            {t("title")}
-          </h2>
-          <p className="text-base max-w-xl" style={{ color: "#6B7280", fontFamily: "var(--font-body)" }}>
+        <div className="mb-14 animate-on-scroll anim-fadeLeft">
+          <p className="text-xs tracking-[0.2em] uppercase font-medium text-cyan mb-3 font-display">
             {t("subtitle")}
           </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-steel font-display">
+            {t("title")}
+          </h2>
         </div>
 
         {/* Category rows */}
         <div className="space-y-10">
           {CATEGORIES.map((cat) => (
             <div key={cat.key} className="animate-on-scroll">
-              <p
-                className="text-xs tracking-[0.15em] uppercase font-semibold mb-4"
-                style={{ color: "#0ACDDF", fontFamily: "var(--font-body)" }}
-              >
+              <p className="text-xs tracking-[0.15em] uppercase font-medium text-text-muted mb-4 font-body">
                 {t(cat.key)}
               </p>
 
@@ -66,13 +58,7 @@ export default function BrandsSection() {
                   return (
                     <div
                       key={brand}
-                      className="flex items-center justify-center rounded-lg px-6 py-4 transition-all hover:shadow-md"
-                      style={{
-                        backgroundColor: "#FFFFFF",
-                        border: "1px solid #E8E4DF",
-                        minHeight: 72,
-                        minWidth: 140,
-                      }}
+                      className="flex items-center justify-center rounded-lg px-6 py-4 bg-white border border-concrete-dark min-h-[72px] min-w-[140px] transition-shadow hover:shadow-md"
                     >
                       {logo ? (
                         <Image
@@ -81,13 +67,10 @@ export default function BrandsSection() {
                           width={logo.width}
                           height={logo.height}
                           className="max-h-12 w-auto object-contain"
-                          unoptimized
+                          sizes="200px"
                         />
                       ) : (
-                        <span
-                          className="text-lg font-bold"
-                          style={{ fontFamily: "var(--font-display)", color: "#1B3A5C" }}
-                        >
+                        <span className="text-lg font-bold font-display text-steel">
                           {brand}
                         </span>
                       )}

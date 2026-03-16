@@ -87,6 +87,15 @@ export const BRANDS = {
   ] satisfies Brand[],
 } as const;
 
+export const NAV_ITEMS = [
+  { id: "palvelut", href: "/palvelut" },
+  { id: "tuotteet", href: "/tuotteet" },
+  { id: "yritys", href: "/yritys" },
+  { id: "referenssit", href: "/referenssit" },
+  { id: "uutisia", href: "/uutisia" },
+  { id: "yhteydenotto", href: "/yhteydenotto" },
+] as const;
+
 export const SERVICES = [
   { id: "refrigeration", icon: "snowflake" },
   { id: "heating", icon: "flame" },

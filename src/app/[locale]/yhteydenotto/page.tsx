@@ -1,12 +1,36 @@
+import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
-import { CONTACT, STAFF } from "@/lib/constants";
+import { getTranslations } from "next-intl/server";
+import { CONTACT, STAFF, SITE, WEBSITE_URL } from "@/lib/constants";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "contactPage" });
+  return {
+    title: t("title"),
+    description: t("subtitle"),
+    alternates: {
+      canonical: `${WEBSITE_URL}/${locale}/yhteydenotto`,
+      languages: { fi: `${WEBSITE_URL}/fi/yhteydenotto`, en: `${WEBSITE_URL}/en/yhteydenotto` },
+    },
+    openGraph: {
+      title: t("title"),
+      description: t("subtitle"),
+      url: `${WEBSITE_URL}/${locale}/yhteydenotto`,
+      type: "website",
+      siteName: SITE.name,
+      locale: locale === "fi" ? "fi_FI" : "en_US",
+    },
+    twitter: { card: "summary", title: t("title"), description: t("subtitle") },
+  };
+}
 import PageHeader from "@/components/layout/PageHeader";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import SectionHeading from "@/components/ui/SectionHeading";
 import StaffCard from "@/components/ui/StaffCard";
 import ContactForm from "@/components/ui/ContactForm";
 import GoogleMap from "@/components/ui/GoogleMap";
 import Icon from "@/components/ui/Icon";
+import FooterSection from "@/components/sections/FooterSection";
 
 export default function ContactPage() {
   const t = useTranslations("contactPage");
@@ -25,10 +49,7 @@ export default function ContactPage() {
                 <div className="w-10 h-10 rounded-full bg-steel/10 flex items-center justify-center mx-auto mb-3">
                   <Icon name="phone" size={20} className="text-steel" />
                 </div>
-                <h3
-                  className="font-semibold text-sm mb-1"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
+                <h3 className="font-semibold text-sm mb-1 font-display">
                   {tc("callUs")}
                 </h3>
                 <a
@@ -45,10 +66,7 @@ export default function ContactPage() {
                 <div className="w-10 h-10 rounded-full bg-emergency/15 flex items-center justify-center mx-auto mb-3">
                   <Icon name="alert-circle" size={20} className="text-emergency" />
                 </div>
-                <h3
-                  className="font-semibold text-sm mb-1 text-emergency"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
+                <h3 className="font-semibold text-sm mb-1 text-emergency font-display">
                   {tc("emergencyService")}
                 </h3>
                 <a
@@ -65,10 +83,7 @@ export default function ContactPage() {
                 <div className="w-10 h-10 rounded-full bg-steel/10 flex items-center justify-center mx-auto mb-3">
                   <Icon name="mail" size={20} className="text-steel" />
                 </div>
-                <h3
-                  className="font-semibold text-sm mb-1"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
+                <h3 className="font-semibold text-sm mb-1 font-display">
                   {tc("emailField")}
                 </h3>
                 <a
@@ -85,10 +100,7 @@ export default function ContactPage() {
                 <div className="w-10 h-10 rounded-full bg-steel/10 flex items-center justify-center mx-auto mb-3">
                   <Icon name="map-pin" size={20} className="text-steel" />
                 </div>
-                <h3
-                  className="font-semibold text-sm mb-1"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
+                <h3 className="font-semibold text-sm mb-1 font-display">
                   {t("locationTitle")}
                 </h3>
                 <a
@@ -105,7 +117,11 @@ export default function ContactPage() {
 
           {/* Staff directory */}
           <ScrollReveal>
-            <SectionHeading title={t("staffTitle")} accent />
+            <div className="mb-12">
+              <h2 className="font-bold text-3xl sm:text-4xl mb-3 text-steel font-display">
+                {t("staffTitle")}
+              </h2>
+            </div>
           </ScrollReveal>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-16 stagger-children">
             {STAFF.map((person) => (
@@ -124,19 +140,13 @@ export default function ContactPage() {
           {/* Form + Map */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <ScrollReveal direction="left">
-              <h2
-                className="font-bold text-xl mb-6 text-text"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
+              <h2 className="font-bold text-xl mb-6 text-text font-display">
                 {t("formTitle")}
               </h2>
               <ContactForm />
             </ScrollReveal>
             <ScrollReveal direction="right">
-              <h2
-                className="font-bold text-xl mb-6 text-text"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
+              <h2 className="font-bold text-xl mb-6 text-text font-display">
                 {t("locationTitle")}
               </h2>
               <GoogleMap />
@@ -163,6 +173,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      <FooterSection />
     </>
   );
 }
