@@ -11,7 +11,7 @@ export default async function TrustSection() {
   ];
 
   return (
-    <section className="py-14 sm:py-16 px-5 bg-steel">
+    <section className="py-14 sm:py-16 pb-20 sm:pb-24 px-5 bg-steel section-angle-bottom">
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0">
           {stats.map((stat, i) => (
@@ -21,7 +21,7 @@ export default async function TrustSection() {
                 i < stats.length - 1 ? "lg:border-r lg:border-cyan/15" : ""
               }`}
             >
-              <p className="text-4xl sm:text-5xl font-bold text-cyan font-display">
+              <p className="text-4xl sm:text-5xl font-bold font-display stat-glow">
                 {stat.value}
               </p>
               <p className="text-sm mt-1 text-text-light-muted font-body">

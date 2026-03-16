@@ -8,6 +8,7 @@ import { Space_Grotesk, DM_Sans } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import { SITE, CONTACT, WEBSITE_URL } from "@/lib/constants";
 import HeaderNav from "@/components/sections/HeaderNav";
+import ScrollProgress from "@/components/ui/ScrollProgress";
 import "../globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -148,6 +149,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       </head>
       <body className="antialiased">
         <NextIntlClientProvider messages={messages}>
+          <ScrollProgress />
           <HeaderNav />
           <main>{children}</main>
         </NextIntlClientProvider>

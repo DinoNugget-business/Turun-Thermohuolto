@@ -18,8 +18,17 @@ export default function FooterSection() {
   }
 
   return (
-    <footer className="bg-dark">
-      <div className="max-w-6xl mx-auto px-5 py-12">
+    <footer className="bg-dark relative overflow-hidden">
+      {/* Oversized brand name — ghosted typographic background */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display font-bold text-white/[0.025] whitespace-nowrap select-none pointer-events-none"
+        style={{ fontSize: "clamp(5rem, 14vw, 12rem)" }}
+        aria-hidden="true"
+      >
+        THERMOHUOLTO
+      </div>
+
+      <div className="relative z-10 max-w-6xl mx-auto px-5 py-12">
         {/* 3-column grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
           {/* Col 1: Brand */}

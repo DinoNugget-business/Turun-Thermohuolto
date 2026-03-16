@@ -31,7 +31,7 @@ export default function HeroSection() {
         </p>
 
         {/* Main headline — large, left-aligned, not centered */}
-        <h1 className="hero-heading font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-text-light leading-[0.95] tracking-tight max-w-[18ch] mb-6">
+        <h1 className="hero-heading font-display hero-headline text-text-light max-w-[16ch] mb-6">
           {SITE.name}
         </h1>
 
@@ -87,11 +87,11 @@ export default function HeroSection() {
 
 function TrustStat({ value, label, accent }: { value: string; label: string; accent?: boolean }) {
   return (
-    <div className="flex items-baseline gap-2">
-      <span className={`font-display text-2xl sm:text-3xl font-bold ${accent ? "text-emergency" : "text-cyan"}`}>
+    <div className="flex flex-col">
+      <span className={`font-display text-3xl sm:text-4xl font-extrabold tracking-tight ${accent ? "text-emergency" : "text-cyan"}`}>
         {value}
       </span>
-      <span className="text-text-light-muted text-xs uppercase tracking-wider">
+      <span className="text-text-light-muted text-[11px] uppercase tracking-widest mt-0.5">
         {label}
       </span>
     </div>

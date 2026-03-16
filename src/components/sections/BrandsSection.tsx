@@ -32,7 +32,7 @@ export default async function BrandsSection() {
   const t = await getTranslations("brands");
 
   return (
-    <section id="brands" className="py-20 sm:py-24 px-5 bg-bg-light">
+    <section id="brands" className="py-20 sm:py-24 px-5 bg-bg-light dot-grid">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <div className="mb-14 animate-on-scroll anim-fadeLeft">

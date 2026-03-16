@@ -34,7 +34,7 @@ export default function HeaderNav() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 h-16 transition-all duration-300 ${
         scrolled
-          ? "bg-dark/97 backdrop-blur-md border-b border-dark-border/50"
+          ? "bg-dark/80 backdrop-blur-xl backdrop-saturate-150 border-b border-white/[0.06] shadow-lg shadow-black/10"
           : "bg-transparent border-b border-transparent"
       }`}
     >

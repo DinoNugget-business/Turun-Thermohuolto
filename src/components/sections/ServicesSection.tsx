@@ -52,17 +52,25 @@ export default async function ServicesSection() {
 
         {/* Service groups */}
         <div className="space-y-12">
-          {SERVICE_GROUPS.map((group) => {
+          {SERVICE_GROUPS.map((group, groupIndex) => {
             const services = group.ids
               .map((id) => SERVICES.find((s) => s.id === id))
               .filter(Boolean);
 
             return (
               <div key={group.labelKey} className="animate-on-scroll">
-                {/* Group label */}
-                <h3 className="text-xs tracking-[0.15em] uppercase font-medium text-text-muted mb-5 font-body">
-                  {t(group.labelKey)}
-                </h3>
+                {/* Group label with oversized decorative number */}
+                <div className="flex items-baseline gap-4 mb-5">
+                  <span
+                    className="font-display text-5xl sm:text-6xl font-bold text-steel/[0.07] leading-none select-none"
+                    aria-hidden="true"
+                  >
+                    {String(groupIndex + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="text-xs tracking-[0.15em] uppercase font-medium text-text-muted font-body">
+                    {t(group.labelKey)}
+                  </h3>
+                </div>
 
                 {/* Service items as rows */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-0">

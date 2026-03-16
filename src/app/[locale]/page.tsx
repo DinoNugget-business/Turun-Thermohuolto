@@ -16,6 +16,8 @@ export default function HomePage() {
       <HeroSection />
       <TrustSection />
       <ServicesSection />
+      {/* Accent divider — breaks visual merge between light sections */}
+      <div className="h-1 bg-gradient-to-r from-transparent via-cyan/30 to-transparent" />
       <BrandsSection />
       <AboutSection />
       <ProcessSection />

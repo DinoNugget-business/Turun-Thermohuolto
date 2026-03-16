@@ -11,7 +11,7 @@ export default async function ProcessSection() {
   const t = await getTranslations("process");
 
   return (
-    <section className="py-20 sm:py-24 px-5 bg-steel">
+    <section className="py-20 sm:py-24 pt-28 sm:pt-32 px-5 bg-steel section-angle-top">
       <div className="max-w-5xl mx-auto">
         {/* Heading — left-aligned, not centered */}
         <div className="mb-14 animate-on-scroll">
@@ -28,12 +28,12 @@ export default async function ProcessSection() {
           {STEPS.map((step, i) => (
             <div
               key={step.key}
-              className={`animate-on-scroll ${i % 2 === 0 ? "" : "anim-fadeRight"} flex items-start gap-6 sm:gap-8 py-6 ${
+              className={`animate-on-scroll ${i % 2 === 0 ? "" : "anim-fadeRight sm:ml-16"} flex items-start gap-6 sm:gap-8 py-6 ${
                 i < STEPS.length - 1 ? "border-b border-dark-border/40" : ""
               }`}
             >
               {/* Step number */}
-              <span className="font-display text-3xl sm:text-4xl font-bold text-cyan/20 shrink-0 w-12 sm:w-16">
+              <span className="font-display text-4xl sm:text-5xl font-bold text-cyan/20 shrink-0 w-14 sm:w-20">
                 {step.num}
               </span>
 
